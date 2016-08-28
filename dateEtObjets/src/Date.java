@@ -1,12 +1,13 @@
 
 public class Date {
+
 int jour;
 int mois;
 int annee;
 String evenement;
 
 //variables statiques ou de classe
-static String[] moisEnLettres={"janvier","fevrier","mar","avril","mai","juin","juillet",
+static String[] moisEnLettres={"janvier","fevrier","mars","avril","mai","juin","juillet",
 		"août","septembre","octobre","novembre","decembre"};
 
 

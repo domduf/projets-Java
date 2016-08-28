@@ -20,7 +20,7 @@ public class DateEtObjets {
         j.afficherDate();
         
         //creation d un objet avec parametres
-        Date test= new Date(8,5,1968,"on lance des pavés");
+        Date test= new Date(8,3,1968,"on lance des pavés");
         test.afficherDate();
         //test si l annee de cette objet est bissextile
         Terminal.ecrireStringln("bissextile ? "+Date.bissextile(test.annee));
@@ -29,7 +29,7 @@ public class DateEtObjets {
         Date test2= new Date(1,5);
         test2.afficherDate();
         
-         
+        
         j.annee=annee;
         j.mois=mois;
         j.jour=jour;
