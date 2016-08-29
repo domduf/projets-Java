@@ -1,9 +1,15 @@
-
+package com.domduf.exo2_1_1;
+/**
+ * 
+ * @author domduf
+ *
+ */
 public class Compte {
 	
 	int solde;
 	String nom;
 	
+
 	public Compte(String nomCompte){
 	nom=nomCompte ;
 	}

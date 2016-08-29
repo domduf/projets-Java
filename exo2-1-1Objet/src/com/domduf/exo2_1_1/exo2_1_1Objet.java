@@ -1,3 +1,4 @@
+package com.domduf.exo2_1_1;
 
 public class exo2_1_1Objet {
 

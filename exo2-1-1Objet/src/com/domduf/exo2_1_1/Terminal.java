@@ -1,3 +1,4 @@
+package com.domduf.exo2_1_1;
 
 import java.io.*;
 public class Terminal{    
