@@ -19,6 +19,7 @@ public class Compte {
 	}
 	
 	void virerVers (int montant, Compte destination){
+		Terminal.ecrireStringln("Virement de "+montant+"€ de "+this.nom+" vers "+destination.nom);
 		this.retirer(montant);
 		destination.deposer(montant);
 		this.afficher();

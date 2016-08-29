@@ -62,7 +62,11 @@ public class exo2_1_1Objet {
 			tableauCompte[i].afficher();
 		}
 		
-		
+		/* 
+		 * à la question n° 3, je ne pense pas qu'il faille prevoir une 
+		 * méthode permettant de changer le nom de compte
+		 * car cela est très dangereux dans le secteur bancaire !!!
+		*/
 
 	}
 
