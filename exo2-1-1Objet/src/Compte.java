@@ -21,6 +21,8 @@ public class Compte {
 	void virerVers (int montant, Compte destination){
 		this.retirer(montant);
 		destination.deposer(montant);
+		this.afficher();
+		destination.afficher();
 	}
 	
 	void afficher (){

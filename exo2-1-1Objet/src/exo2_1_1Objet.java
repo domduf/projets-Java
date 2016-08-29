@@ -20,11 +20,46 @@ public class exo2_1_1Objet {
 		//declaration d un tableau de 10 comptes
 		Compte  tableauCompte[] = new Compte[10];
 		
+		
+		//initialisation des dix comptes
 		for (int i=0;i<10;i++){
 			String chaine =String.valueOf(i);
-			chaine="compte "+chaine;
-			Terminal.ecrireStringln(chaine);
+			chaine="no"+chaine;
+			Terminal.ecrireStringln("init du compte "+chaine);
+			tableauCompte[i]= new Compte(chaine);
+			tableauCompte[i].afficher();
+		}
 		
+		Terminal.sautDeLigne();
+		
+		//depot de 200 € et somme de 100 fois l'indice
+		Terminal.ecrireStringln("dépot d'argent sur chaque compte");
+		for (int i=0;i<10;i++){
+			tableauCompte[i].deposer(200+100*i);
+			tableauCompte[i].afficher();
+		}
+		
+		Terminal.sautDeLigne();
+		
+		//virement de 20€ de chaque compte vers chacun des comptes suivants
+		Terminal.ecrireStringln("virement de 20€ de chaque compte vers chacun des comptes suivants");
+		int j=0;
+		for (int i=0;i<10;i++){
+			j=i+1;
+			while (j<=9){
+				tableauCompte[i].virerVers(20, tableauCompte[j]);
+				j+=1;
+			}
+			
+		}
+		
+		Terminal.sautDeLigne();
+		
+		//affichage du solde de tous les comptes
+		Terminal.ecrireStringln("affichage du solde de tous les comptes");
+		Terminal.sautDeLigne();
+		for (int i=0;i<10;i++){
+			tableauCompte[i].afficher();
 		}
 		
 		
