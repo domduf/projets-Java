@@ -8,6 +8,7 @@ public class exo2_1_1Objet {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		/*
 		Compte compte1 =new Compte("compte test 1");
 		Compte compte2 =new Compte("compte test 2");
 		
@@ -17,6 +18,7 @@ public class exo2_1_1Objet {
 		compte1.virerVers(75, compte2);
 		compte1.afficher();
 		compte2.afficher();
+		*/
 		
 		//declaration d un tableau de 10 comptes
 		Compte  tableauCompte[] = new Compte[10];

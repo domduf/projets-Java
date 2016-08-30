@@ -24,12 +24,15 @@ public class Compte {
 		solde=solde+montant;
 	}
 	
-	void retirer(int montant){
+	void retirer(int montant){			
+
 		if (this.solde<montant){
+		Terminal.ecrireStringln("Votre solde est de "+solde+"€ et vous demandez " +
+			montant+"€");
 			Terminal.ecrireStringln("Opération refusée... changez de banque !");
 		}else
 		solde=solde-montant;
-		this.afficher();
+		
 	}
 	
 	void virerVers (int montant, Compte destination){
