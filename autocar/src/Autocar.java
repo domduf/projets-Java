@@ -140,12 +140,16 @@ public class Autocar {
 */
 		
 		Lignebus ligne7;
-		ligne7= new Lignebus();
+		ligne7= new Lignebus(5);
 		Terminal.ecrireStringln(ligne7.nomLigne);
 		ligne7.nomLigne="Ligne 7";
 		Terminal.ecrireStringln(ligne7.nomLigne);
-
-
+		
+		Lignebus bus1= new Lignebus(3);
+		bus1.afficher();
+		bus1.setTousArret();
+		bus1.setTousTarif();
+		bus1.afficher();
 
 	}
 

@@ -8,10 +8,14 @@ public class Compte {
 	
 	int solde;
 	String nom;
+	int numero;
+	static int numeroBase=0;
 	
 
 	public Compte(String nomCompte){
 	nom=nomCompte ;
+	numero=numeroBase+1;
+	numeroBase++;
 	}
 	
 	
@@ -21,7 +25,11 @@ public class Compte {
 	}
 	
 	void retirer(int montant){
+		if (this.solde<montant){
+			Terminal.ecrireStringln("Opération refusée... changez de banque !");
+		}else
 		solde=solde-montant;
+		this.afficher();
 	}
 	
 	void virerVers (int montant, Compte destination){
@@ -33,6 +41,6 @@ public class Compte {
 	}
 	
 	void afficher (){
-		Terminal.ecrireStringln("le solde du compte "+nom+" est de "+solde+" €.");
+		Terminal.ecrireStringln("le solde du compte (n°"+numero+") "+nom+" est de "+solde+" €.");
 	}
 }

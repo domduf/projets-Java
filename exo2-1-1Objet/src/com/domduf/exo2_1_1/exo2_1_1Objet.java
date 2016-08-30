@@ -68,6 +68,10 @@ public class exo2_1_1Objet {
 		 * méthode permettant de changer le nom de compte
 		 * car cela est très dangereux dans le secteur bancaire !!!
 		*/
+		
+		tableauCompte[0].retirer(30);
+		
+		tableauCompte[0].retirer(20);
 
 	}
 
