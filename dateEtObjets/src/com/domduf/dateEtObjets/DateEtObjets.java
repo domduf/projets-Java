@@ -1,3 +1,4 @@
+package com.domduf.dateEtObjets;
 
 public class DateEtObjets {
 
@@ -40,6 +41,15 @@ public class DateEtObjets {
         
         test2.passerAuLendemain();
         test2.afficherDate();
+        
+        Personne dom = new Personne(); 
+        //dom.naissance = new Date();
+        dom.naissance.afficherDate();
+       
+        dom.naissance.setDate();
+        dom.naissance.afficherDate();
+        
+        
 	}
 
 }

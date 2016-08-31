@@ -44,6 +44,7 @@ public class Compte {
 	}
 	
 	void afficher (){
-		Terminal.ecrireStringln("le solde du compte (n°"+numero+") "+nom+" est de "+solde+" €.");
+		Terminal.ecrireStringln("le solde du compte (n°"+numero+") "
+				+nom+" est de "+solde+" €.");
 	}
 }
