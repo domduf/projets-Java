@@ -6,6 +6,11 @@ public class Biblio {
 	String nomBib;
 	Livre[] livres;
 	
+	/**
+	 * 
+	 * @param nom (nom de la bibliothèque)
+	 * @param nbLivres (le nombre de livres)
+	 */
 	public Biblio(String nom, int nbLivres){
 		
 		nomBib = nom;
@@ -17,7 +22,9 @@ public class Biblio {
 	
 	public void afficherLivres(){
 		
-		Terminal.ecrireStringln("Cette bibliothèque contient "+livres.length+" livres:");
+		Terminal.sautDeLigne();
+		Terminal.ecrireStringln("Cette bibliothèque \""+nomBib+"\" contient "+livres.length+" livres:");
+		Terminal.sautDeLigne();
 		
 		for (int i=0; i< livres.length ; i++){
 			livres[i].afficher();
