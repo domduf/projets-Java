@@ -15,6 +15,7 @@ public class Livre {
 		nomAuteur=Terminal.lireString();
 		Terminal.ecrireStringln("Entrez le Nom de l'éditeur");
 		editeur=Terminal.lireString();
+
 	}
 	
 	//methode d instance
@@ -22,6 +23,7 @@ public class Livre {
 		Terminal.ecrireStringln("Titre du livre: \""+this.titre+"\"");
 		Terminal.ecrireStringln("AUTEUR: "+this.nomAuteur);
 		Terminal.ecrireStringln("Editeur: "+this.editeur);
+		Terminal.sautDeLigne();
 		
 	}
 	
