@@ -15,8 +15,24 @@ public class mainBibliotheque {
 		a.afficher();
 		*/
 		
-		Biblio nouvelle= new Biblio("essai-2livres", 2);
-		nouvelle.afficherLivres();
+		Biblio nouvelle= new Biblio("petite", 3);
+		Biblio vieille= new Biblio("grande",5);
+		
+		//test de remplissage de chaque bibliotheque
+		for (int i=0; i<=6; i++){
+			
+			//affichage des livres de chaque bibliotheque
+			nouvelle.afficherLivres();
+			vieille.afficherLivres();
+			
+			//ajout d'un livre dans chaque bib, jusque plus soif
+			nouvelle.ajouterLivre();
+			vieille.ajouterLivre();
+			
+			Terminal.ecrireStringln("-------------------------------------------------");
+		}
+		
+		
 	}
 
 }

@@ -5,28 +5,47 @@ public class Biblio {
 	//variables instances de classe
 	String nomBib;
 	Livre[] livres;
+	int nbLivresBib=0;
 	
 	/**
 	 * 
-	 * @param nom (nom de la bibliothèque)
-	 * @param nbLivres (le nombre de livres)
+	 * @param nom
+	 * @param nbLivresMax
 	 */
-	public Biblio(String nom, int nbLivres){
+	public Biblio(String nom, int nbLivresMax){
 		
 		nomBib = nom;
-		livres = new Livre[nbLivres];
-		for (int i=0; i< nbLivres ; i++){
-			livres[i]=new Livre();
-		}
+		livres = new Livre[nbLivresMax];
+		
 	}
+	
+	public void ajouterLivre(){
+		Terminal.ecrireStringln("Bibliothèque: "+this.nomBib);
+		if (nbLivresBib < this.livres.length){
+			livres[nbLivresBib]=new Livre();
+			nbLivresBib=nbLivresBib+1;
+		}
+		else {
+			Terminal.ecrireStringln("La bibliotheque est pleine à craquer, désolé.");
+			//afficherLivres();
+			}
+		}
+		
+		
+	
+	
 	
 	public void afficherLivres(){
 		
 		Terminal.sautDeLigne();
-		Terminal.ecrireStringln("Cette bibliothèque \""+nomBib+"\" contient "+livres.length+" livres:");
+		Terminal.ecrireStringln("Cette bibliothèque \""+nomBib+"\" (capacité "+livres.length+" livres) contient:");
 		Terminal.sautDeLigne();
 		
-		for (int i=0; i< livres.length ; i++){
+		if (nbLivresBib==0){
+			Terminal.ecrireStringln("aucun livre pour l'instant");
+			}
+		
+		for (int i=0; i< this.nbLivresBib ; i++){
 			livres[i].afficher();
 		}
 	}
