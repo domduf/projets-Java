@@ -19,8 +19,8 @@ public class mainBibliotheque {
 		Biblio vieille= new Biblio("Orléans",5);
 		
 		//test de remplissage de chaque bibliotheque avec 6 livres
-		for (int i=0; i<=6; i++){
-			
+		for (int i=0; i<6; i++){
+			Terminal.ecrireStringln("---------------------Tour "+(i+1)+"------------------");			
 			//affichage des livres de chaque bibliotheque
 			nouvelle.afficherLivres();
 			vieille.afficherLivres();
