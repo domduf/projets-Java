@@ -15,10 +15,10 @@ public class mainBibliotheque {
 		a.afficher();
 		*/
 		
-		Biblio nouvelle= new Biblio("petite", 3);
-		Biblio vieille= new Biblio("grande",5);
+		Biblio nouvelle= new Biblio("Neuville", 3);
+		Biblio vieille= new Biblio("Orléans",5);
 		
-		//test de remplissage de chaque bibliotheque
+		//test de remplissage de chaque bibliotheque avec 6 livres
 		for (int i=0; i<=6; i++){
 			
 			//affichage des livres de chaque bibliotheque

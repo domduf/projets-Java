@@ -19,6 +19,9 @@ public class Biblio {
 		
 	}
 	
+	/**
+	 * ajoute un livre à la bibliotheque
+	 */
 	public void ajouterLivre(){
 		Terminal.ecrireStringln("Bibliothèque: "+this.nomBib);
 		if (nbLivresBib < this.livres.length){
@@ -34,15 +37,19 @@ public class Biblio {
 		
 	
 	
-	
+	/**
+	 * affiche le contenu de la bibliotheque
+	 */
 	public void afficherLivres(){
 		
 		Terminal.sautDeLigne();
-		Terminal.ecrireStringln("Cette bibliothèque \""+nomBib+"\" (capacité "+livres.length+" livres) contient:");
+		Terminal.ecrireStringln("Cette bibliothèque \""+nomBib+
+				"\" (capacité "+livres.length+" livres) contient "+nbLivresBib+" livre(s):");
 		Terminal.sautDeLigne();
 		
 		if (nbLivresBib==0){
 			Terminal.ecrireStringln("aucun livre pour l'instant");
+			Terminal.sautDeLigne();
 			}
 		
 		for (int i=0; i< this.nbLivresBib ; i++){
