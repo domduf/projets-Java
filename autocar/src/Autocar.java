@@ -39,48 +39,9 @@ public class Autocar {
 	}
 
 
-	public static float base (int indice, float[] prix){
-		float a=0f;
-		for (int i = 0 ; i< indice ; i++) {
-			a = a + prix[i];	
-
-		}
-		return a;
-	}
-
-	/**
-	 * calcul du prix 
-	 * on se base sur une valeur absolue, pour pouvoir
-	 * entrer les villes dans n'importe quel ordre
-	 * @param villes
-	 * @param prix
-	 */
-	public static void calculPrix (String[] villes, float[] prix){
 
 
 
-		Terminal.ecrireString("Entrez l'indice de la ville de départ");
-		int ind1=Terminal.lireInt()-1;
-		Terminal.sautDeLigne();
-
-		Terminal.ecrireString("Entrez l'indice de la ville d'arrivée");
-		int ind2=Terminal.lireInt()-1;
-		Terminal.sautDeLigne();	
-
-
-		float prixBaseInd1= base(ind1, prix);
-		Terminal.ecrireStringln("prixBaseInd1 ="+prixBaseInd1);
-		float prixBaseInd2= base(ind2, prix);
-		Terminal.ecrireStringln("prixBaseInd2 ="+prixBaseInd2);	
-
-
-		//calcul
-		float calcul2 = prixBaseInd1 - prixBaseInd2 ;
-
-		//affichage de la valeur absolue de la différence
-		Terminal.ecrireStringln("Le prix (methode de valeur absolue)="+Math.abs(calcul2)+"€");
-
-	}
 
 	public static void calculPrixDegressif (String[] villes, float[] prix){
 		
@@ -138,18 +99,24 @@ public class Autocar {
 
 		Terminal.ecrireIntln(donneVille(entree, ligne1 ));
 */
-		
+		/*
 		Lignebus ligne7;
 		ligne7= new Lignebus(5);
 		Terminal.ecrireStringln(ligne7.nomLigne);
 		ligne7.nomLigne="Ligne 7";
 		Terminal.ecrireStringln(ligne7.nomLigne);
+		*/
 		
-		Lignebus bus1= new Lignebus(3);
+		Terminal.ecrireStringln("Combien d'arrêts pour la ligne de bus ?:");
+		int nb=Terminal.lireInt();
+		Lignebus bus1= new Lignebus(nb);
+		Terminal.ecrireStringln("entrez le nom de la ligne de bus:");
+		bus1.nomLigne=Terminal.lireString();
 		bus1.afficher();
 		bus1.setTousArret();
 		bus1.setTousTarif();
 		bus1.afficher();
+		bus1.calculPrix();
 
 	}
 
