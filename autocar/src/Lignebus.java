@@ -1,10 +1,11 @@
 
 public class Lignebus {
 	
-	String nomLigne;
-	float[] tarifTronçons;
-	String[] arretsDesservis;
+	private String nomLigne;
+	private float[] tarifTronçons;
+	private String[] arretsDesservis;
 	
+	//constructeur
 	public Lignebus (int a){
 		nomLigne="ligne Vierge";
 		tarifTronçons= new float [a];
@@ -15,6 +16,36 @@ public class Lignebus {
 			arretsDesservis[i]="?";
 		}	
 		
+	}
+	
+	//stetter
+	public void setNomLigne(){
+		Terminal.ecrireStringln("entrez le nom de la ligne de bus:");
+		this.nomLigne=Terminal.lireString();
+	}
+	
+	
+	public int donneNumero (){
+
+
+		Terminal.ecrireStringln("Entrez le nom de l'arrêt dont vous souhaitez connaître le n°: ");
+		String arret=Terminal.lireString();
+		Terminal.ecrireStringln("Votre entrée: "+arret);
+
+
+
+		for (int i =0 ; i < this.arretsDesservis.length ; i++ ){
+			//Terminal.ecrireStringln((i+1)+" "+this.arretsDesservis[i]);
+
+			if (this.arretsDesservis[i].equalsIgnoreCase(arret)) {
+				Terminal.ecrireString("Voici le n°: "+(i+1));
+				Terminal.sautDeLigne();
+
+				return i+1;
+			}
+		}
+		return 0;
+
 	}
 	
 	public void afficher(){
@@ -54,7 +85,7 @@ public class Lignebus {
 		float prixDegressif=0f;
 		int taux=100;
 		
-		Terminal.ecrireStringln("Calcul prix entre deux arrêts, prix degressif: ");
+		Terminal.ecrireStringln("Calcul prix entre deux arrêts (tarif degressif) ");
 		Terminal.ecrireString("Entrez l'indice de la ville de départ");
 		int ind1=Terminal.lireInt()-1;
 		Terminal.sautDeLigne();
@@ -71,7 +102,7 @@ public class Lignebus {
 			ind2=a;
 		}
 		//Terminal.ecrireString("Ind1:"+(ind1+1)+" Ind2:"+(ind2+1));
-		Terminal.sautDeLigne();
+		//Terminal.sautDeLigne();
 		
 		while (ind1<ind2){
 			prixDegressif=prixDegressif+(this.tarifTronçons[ind1]*taux/100);
@@ -80,14 +111,14 @@ public class Lignebus {
 			ind1=ind1+1;
 			taux=taux-10;
 		}
-		Terminal.ecrireString("Le prix degressif est de "+prixDegressif);
+		Terminal.ecrireString("Le prix degressif est de "+prixDegressif+"€");
 		
 		
 	}
 
 	public void  calculPrix (){
 	
-	
+		Terminal.ecrireStringln("Calcul prix entre deux arrêts (tarif normal) ");
 	
 		Terminal.ecrireString("Entrez l'indice de la ville de départ");
 		int depart=Terminal.lireInt();
@@ -101,22 +132,22 @@ public class Lignebus {
 	
 	
 		float prixBaseInd1= base(ind1, this.tarifTronçons);
-		Terminal.ecrireStringln("prixBaseInd1 ="+prixBaseInd1);
+		//Terminal.ecrireStringln("prixBaseInd1 ="+prixBaseInd1);
 		float prixBaseInd2= base(ind2, this.tarifTronçons);
-		Terminal.ecrireStringln("prixBaseInd2 ="+prixBaseInd2);	
+		//Terminal.ecrireStringln("prixBaseInd2 ="+prixBaseInd2);	
 	
 	
 		//calcul
 		float calcul2 = prixBaseInd1 - prixBaseInd2 ;
 	
 		//affichage de la valeur absolue de la différence
-		Terminal.ecrireStringln("Le prix (methode de valeur absolue)="+Math.abs(calcul2)+"€");
+		Terminal.ecrireStringln("Le prix normal est de "+Math.abs(calcul2)+"€");
 	
 	}
 
 
 
-	public static float base (int indice, float[] prix){
+	private static float base (int indice, float[] prix){
 		float a=0f;
 		for (int i = 0 ; i< indice ; i++) {
 			a = a + prix[i];	
