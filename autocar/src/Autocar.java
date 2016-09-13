@@ -1,16 +1,7 @@
 
 public class Autocar {
 
-	/**
-	 * affiche les villes du tableau
-	 * @param ligne1
-	 */
-	public static void	affichageDesVilles(String[] ligne){
 
-		for (int i =0 ; i < ligne.length ; i++ ){
-			Terminal.ecrireStringln((i+1)+"-"+ligne[i]);
-		}
-	}
 
 	/**
 	 * 
@@ -43,40 +34,7 @@ public class Autocar {
 
 
 
-	public static void calculPrixDegressif (String[] villes, float[] prix){
-		
-		float prixDegressif=0f;
-		int taux=100;
-		
-		Terminal.ecrireString("Entrez l'indice de la ville de départ");
-		int ind1=Terminal.lireInt()-1;
-		Terminal.sautDeLigne();
 
-		Terminal.ecrireString("Entrez l'indice de la ville d'arrivée");
-		int ind2=Terminal.lireInt()-1;
-		Terminal.sautDeLigne();
-		
-		//on suppose le prix identique dans les deux sens
-		//donc interversion des indices si ind1>ind2
-		if (ind1>ind2){
-			int a=ind1;
-			ind1=ind2;
-			ind2=a;
-		}
-		//Terminal.ecrireString("Ind1:"+(ind1+1)+" Ind2:"+(ind2+1));
-		Terminal.sautDeLigne();
-		
-		while (ind1<ind2){
-			prixDegressif=prixDegressif+(prix[ind1]*taux/100);
-			//Terminal.ecrireStringln("Le prix est de "+prixDegressif+" le taux est de "+taux+" ind1="+ind1);
-
-			ind1=ind1+1;
-			taux=taux-10;
-		}
-		Terminal.ecrireString("Le prix degressif est de "+prixDegressif);
-		
-		
-	}
 	/**
 	 * @param args
 	 */
@@ -117,6 +75,7 @@ public class Autocar {
 		bus1.setTousTarif();
 		bus1.afficher();
 		bus1.calculPrix();
+		bus1.calculPrixDegressif();
 
 	}
 
