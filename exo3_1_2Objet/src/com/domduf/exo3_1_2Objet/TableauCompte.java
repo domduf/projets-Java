@@ -1,5 +1,7 @@
 package com.domduf.exo3_1_2Objet;
 
+
+
 public class TableauCompte {
 	
 	Compte[] tab;
@@ -9,15 +11,19 @@ public class TableauCompte {
 	
 	TableauCompte (int n){
 		tab= new Compte[n];
+		longueur=0;
+		
+		
+	/*
+		for (int i=0;i<n;i++){
+			tab[i]= new Compte(i);
+		}
+	*/
 	}
 	
 	
-	
-	
-	public void ajouter (Compte c) throws NonInitialise{
-		if(c==null){
-			throw new NonInitialise();
-		}
+	public void ajouter (Compte c){
+		
 		if(longueur<tab.length){
 			tab[longueur]=c;
 			longueur++;

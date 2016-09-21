@@ -6,8 +6,8 @@ public class Compte {
 
 
 	//constructeur par défaut
-	public  Compte (int num){
-		numero=num;
+	public  Compte (int n){
+		numero=n;
 		solde=0;
 	}
 	
