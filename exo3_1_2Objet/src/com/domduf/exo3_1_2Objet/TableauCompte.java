@@ -31,4 +31,24 @@ public class TableauCompte {
 	}
 	
 	
+	
+	public void afficher (){
+		for (int i=0;i<tab.length;i++){
+			
+			if (tab[i]!=null){
+			
+			Terminal.ecrireStringln("Compte n°"+i+" numero "+ tab[i].numero);
+			tab[i].afficher();
+			}
+			
+		}
+	}
+	
+	public Compte compte (int indice){
+		return this.tab[indice];
+		
+		 
+	}
+	
+	
 }
