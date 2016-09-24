@@ -25,7 +25,7 @@ public class Exo3_1_2Objet {
 		julie = new Titulaire("Julie");
 		
 		Titulaire[] listeTitulaire1= {dom,paul,pierre};
-		Titulaire[] listeTitulaire2= {dom,paul};		
+		Titulaire[] listeTitulaire2= {pierre,paul};		
 	
 		
 		Banque bnp = new Banque("BNP");
@@ -34,56 +34,28 @@ public class Exo3_1_2Objet {
 		
 		
 		bnp.creerComptePour(listeTitulaire1);
-		bnp.creerComptePour(listeTitulaire2);
-		bnp.creerComptePour(dom);
+		bnp.creerComptePour(julie);
 		
 		
 		axa.creerComptePour(listeTitulaire2);
 		axa.creerComptePour(julie);
 		
+		dom.donneProcuration(julie, bnp, 0);
+		
+		dom.mesComptes.afficherTableauCompte();
+		julie.mesComptes.afficherTableauCompte();
+		axa.tous.afficherTableauCompte();
+		axa.afficherTousCompte(dom);
+	
+		
 		chmol.creerComptePour(dom);
-		/*
-		for (int i=0;i<56;i++){
-			bnp.creerComptePour(listeTitulaire1);
-		}
-		*/
-		Terminal.ecrireStringln("Titulaire "+dom.getNom());	
-		dom.mesComptes.afficher();
-		
-		Terminal.sautDeLigne();
-		
-		Terminal.ecrireStringln("Banque "+axa.getNom());	
-		axa.tous.afficher();
 
-			Terminal.sautDeLigne();
-		
-		dom.mesComptes.tab[0].depot(100);
-		Terminal.ecrireStringln("Titulaire "+dom.getNom());	
-		dom.mesComptes.afficher();
-		
-		Terminal.sautDeLigne();
-		
-		bnp.nombreDeComptes();
-		axa.nombreDeComptes();
-		
-		Terminal.sautDeLigne();
-		
-		dom.mesComptes.afficher();
-		dom.mesComptes.tab[1].depot(300);
-		Terminal.sautDeLigne();
-		dom.mesComptes.tab[1].virVersNo(axa, 0, 20);
-		dom.mesComptes.tab[1].afficher();
-		
-		Terminal.sautDeLigne();
-		
-		axa.tous.afficher();
-		dom.mesComptes.afficher();
-		
-		dom.donneProcuration(julie, axa, 0);
-		Terminal.sautDeLigne();
-		
-		julie.mesComptes.afficher();
-		
+		dom.mesComptes.afficherTableauCompte();
+		julie.mesComptes.compte(2).depot(1500);
+		dom.mesComptes.compte(1).virVersNo(bnp, 0, 255);
+		bnp.tous.afficherTableauCompte();
+		dom.mesComptes.afficherTableauCompte();
+		julie.mesComptes.afficherTableauCompte();
 	}
 
 }

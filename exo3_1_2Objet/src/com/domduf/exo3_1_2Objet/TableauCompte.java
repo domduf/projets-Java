@@ -6,6 +6,7 @@ public class TableauCompte {
 
 	Compte[] tab;
 	int longueur;
+	String createur;
 
 
 
@@ -13,9 +14,10 @@ public class TableauCompte {
 	 * constructeur par défaut
 	 * @param n
 	 */
-	TableauCompte (int n){
+	TableauCompte (int n, String c){
 		tab= new Compte[n];
 		longueur=0;
+		createur=c;
 	}
 
 	/**
@@ -34,16 +36,20 @@ public class TableauCompte {
 	/**
 	 * affiche les numéros 
 	 */
-	public void afficher (){
+	public void afficherTableauCompte (){
+		Terminal.ecrireStringln("-------------------------------------");
+		Terminal.ecrireStringln("Affichage du tableau des comptes de "+createur);
 		for (int i=0;i<tab.length;i++){
 
 			if (tab[i]!=null){
 
-				Terminal.ecrireStringln("Compte n°"+i+" numero "+ tab[i].numero);
+				Terminal.ecrireStringln("Compte n°"+i);
+				Terminal.ecrireString("---");
 				tab[i].afficher();
 			}
 
 		}
+		Terminal.ecrireStringln("-------------------------------------");
 	}
 
 	/**
@@ -53,8 +59,6 @@ public class TableauCompte {
 	 */
 	public Compte compte (int indice){
 		return this.tab[indice];
-
-
 	}
 
 

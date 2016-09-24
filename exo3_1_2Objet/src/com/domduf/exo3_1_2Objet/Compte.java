@@ -9,17 +9,18 @@ public class Compte {
 	int numero; // numero du compte
 	int solde;  // solde
 	Banque createur; //banque créatrice du Compte
-
+	Titulaire titulaire;
 
 	/**
 	 * constructeur par défaut
 	 * @param n
 	 * @param b
 	 */
-	public  Compte (int n, Banque b){
+	public  Compte (int n, Banque b, Titulaire t){
 		numero=n;
 		solde=0;
 		createur= b;
+		titulaire=t;
 	}
 
 	/**
@@ -28,6 +29,7 @@ public class Compte {
 	 */
 	void depot(int n){
 		solde=solde+n;
+		Terminal.ecrireStringln("dépot de "+n+"€ sur compte N°"+this.numero+" banque "+this.createur.getNom());
 	}
 
 	/**
@@ -36,6 +38,7 @@ public class Compte {
 	 */
 	void retrait (int n){
 		solde=solde-n;
+		Terminal.ecrireStringln("retrait de "+n+"€ du compte N°"+this.numero+" banque "+this.createur.getNom());
 	}
 
 	/**
@@ -48,11 +51,11 @@ public class Compte {
 
 
 		Compte c= b.tous.compte(num);
-
-		this.retrait(montant);
-		c.depot(montant);
 		Terminal.ecrireStringln("Virement de "+montant+" € du compte "+this.numero+ " vers le compte de " +
 				"la banque "+b.nom+" numéro "+num);
+		this.retrait(montant);
+		c.depot(montant);
+
 	}
 
 	/**
@@ -60,7 +63,7 @@ public class Compte {
 	 */
 	void afficher(){
 		//String banque= ;
-		Terminal.ecrireString("Solde du compte n° "+numero+" banque "+this.createur.nom+": ");
+		Terminal.ecrireString("Solde du compte n° "+numero+" banque "+this.createur.nom+": "+this.titulaire.getNom()+" ");
 		Terminal.ecrireIntln(solde);
 	}
 }

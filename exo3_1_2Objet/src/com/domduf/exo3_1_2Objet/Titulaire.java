@@ -16,7 +16,7 @@ public class Titulaire {
 	public Titulaire (String n){
 		Terminal.ecrireStringln("Création du titulaire "+n);
 		nom=n;
-		mesComptes = new TableauCompte(10);
+		mesComptes = new TableauCompte(10, this.getNom());
 	}
 
 	/**
@@ -27,8 +27,11 @@ public class Titulaire {
 	 */
 	public void donneProcuration( Titulaire t, Banque b, int numCompte){
 
+		
 
-		t.mesComptes.ajouter(this.mesComptes.compte(numCompte));
+		t.mesComptes.ajouter(b.tous.compte(numCompte));
+		Terminal.ecrireStringln(this.getNom()+" donne procuration à "+t.getNom()+" pour son compte n°"+numCompte
+				+" à la banque "+b.getNom());
 
 	}
 
