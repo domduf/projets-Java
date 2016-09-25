@@ -29,7 +29,7 @@ public class Compte {
 	 */
 	void depot(int n){
 		solde=solde+n;
-		Terminal.ecrireStringln("dépot de "+n+" € sur compte N°"+this.numero+" banque "+this.createur.getNom());
+		Terminal.ecrireStringln("++dépot de "+n+" € sur compte N° "+this.numero+ " "+this.createur.appartient());
 	}
 
 	/**
@@ -38,7 +38,7 @@ public class Compte {
 	 */
 	void retrait (int n){
 		solde=solde-n;
-		Terminal.ecrireStringln("retrait de "+n+" € du compte N°"+this.numero+" banque "+this.createur.getNom());
+		Terminal.ecrireStringln("--retrait de "+n+" € sur compte N° "+this.numero+ " "+this.createur.appartient());
 	}
 
 	/**

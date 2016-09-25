@@ -104,9 +104,11 @@ public class Banque implements Detentrice {
 		Terminal.ecrireStringln("----------------------------");
 	}
 
+	
 	public String getNom(){
 		return this.nom;
 	}
+	
 	
 	public String appartient(){
 		return "BANQUE "+this.getNom();
