@@ -54,7 +54,7 @@ public class Exo3_1_2Objet {
 		axa.getTabCompte().afficherTableauCompte();
 		axa.afficherTousCompte(dom);
 	
-		axa.setNom();
+		//axa.setNom();
 		chmol.creerComptePour(dom);
 
 		dom.mesComptes.afficherTableauCompte();
@@ -66,7 +66,8 @@ public class Exo3_1_2Objet {
 		julie.mesComptes.compte(2).virVersNo(axa, 1, 1623);
 		julie.mesComptes.afficherTableauCompte();
 		axa.getTabCompte().afficherTableauCompte();
-		
+		Terminal.ecrireStringln("voilà le nom :"+axa.appartient());
+		Terminal.ecrireStringln("voilà le nom :"+dom.appartient());
 		
 	}
 

@@ -1,6 +1,6 @@
 package com.domduf.exo3_1_2Objet;
 
-public class Banque {
+public class Banque implements Detentrice {
 
 	private String nom;
 	private TableauCompte tous;
@@ -106,6 +106,10 @@ public class Banque {
 
 	public String getNom(){
 		return this.nom;
+	}
+	
+	public String appartient(){
+		return this.getNom();
 	}
 	
 	public void setNom(){

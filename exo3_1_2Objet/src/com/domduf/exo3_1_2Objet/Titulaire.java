@@ -5,7 +5,7 @@ package com.domduf.exo3_1_2Objet;
  * @author domduf
  *
  */
-public class Titulaire {
+public class Titulaire implements Detentrice {
 	String nom;
 	TableauCompte mesComptes;
 
@@ -45,5 +45,8 @@ public class Titulaire {
 		return this.nom;
 	}
 
+	public String appartient(){
+		return this.getNom();
+	}
 
 }
