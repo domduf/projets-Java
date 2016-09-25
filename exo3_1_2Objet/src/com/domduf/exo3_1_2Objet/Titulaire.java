@@ -46,7 +46,7 @@ public class Titulaire implements Detentrice {
 	}
 
 	public String appartient(){
-		return this.getNom();
+		return "Titulaire "+this.getNom();
 	}
 
 }

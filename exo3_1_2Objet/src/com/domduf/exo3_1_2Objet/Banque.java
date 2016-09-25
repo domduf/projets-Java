@@ -109,7 +109,7 @@ public class Banque implements Detentrice {
 	}
 	
 	public String appartient(){
-		return this.getNom();
+		return "BANQUE "+this.getNom();
 	}
 	
 	public void setNom(){

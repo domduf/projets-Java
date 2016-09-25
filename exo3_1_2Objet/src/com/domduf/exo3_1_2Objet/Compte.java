@@ -62,8 +62,9 @@ public class Compte {
 	 * affiche le solde du Compte
 	 */
 	void afficher(){
-		//String banque= ;
-		Terminal.ecrireString("Solde du compte n° "+numero+" banque "+this.createur.getNom()+": "+this.titulaire.getNom()+" ");
+		
+		Terminal.ecrireString(
+				createur.appartient()+" n°"+numero+" "+titulaire.appartient()+" Solde: ");
 		Terminal.ecrireIntln(solde);
 	}
 }
