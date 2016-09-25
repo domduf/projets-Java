@@ -6,7 +6,8 @@ public class TableauCompte {
 
 	Compte[] tab;
 	int longueur;
-	String createur;
+	Banque bCree;
+	Titulaire tCree;
 
 
 
@@ -14,11 +15,19 @@ public class TableauCompte {
 	 * constructeur par défaut
 	 * @param n
 	 */
-	TableauCompte (int n, String c){
+	TableauCompte (int n, Banque b){
 		tab= new Compte[n];
 		longueur=0;
-		createur=c;
+		bCree=b;
 	}
+	
+	TableauCompte (int n, Titulaire t){
+		tab= new Compte[n];
+		longueur=0;
+		tCree=t;
+	}
+	
+	
 
 	/**
 	 * ajoute le Compte au tableau
@@ -33,12 +42,27 @@ public class TableauCompte {
 	}
 
 
+	
+	
+	
 	/**
 	 * affiche le tableau des comptes du createur du tableau
 	 */
 	public void afficherTableauCompte (){
 		Terminal.ecrireStringln("-------------------------------------");
-		Terminal.ecrireStringln("Affichage du tableau des comptes de "+createur);
+		
+		String createur;
+		//determine le nom du createur du tableau dynamiquement
+		
+		if (this.bCree==null){
+			createur = tCree.appartient();
+			Terminal.ecrireStringln("Affichage du tableau des comptes de "+createur);
+		} else 
+			Terminal.ecrireStringln("Affichage du tableau des comptes de "+bCree.appartient());
+
+		
+		
+				
 		for (int i=0;i<tab.length;i++){
 
 			if (tab[i]!=null){

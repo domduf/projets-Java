@@ -54,7 +54,8 @@ public class Exo3_1_2Objet {
 		axa.getTabCompte().afficherTableauCompte();
 		axa.afficherTousCompte(dom);
 	
-		//axa.setNom();
+		
+		axa.setNom();
 		chmol.creerComptePour(dom);
 
 		dom.mesComptes.afficherTableauCompte();

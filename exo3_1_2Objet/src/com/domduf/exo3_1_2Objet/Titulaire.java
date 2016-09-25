@@ -16,7 +16,7 @@ public class Titulaire implements Detentrice {
 	public Titulaire (String n){
 		Terminal.ecrireStringln("Création du titulaire "+n);
 		nom=n;
-		mesComptes = new TableauCompte(10, this.getNom());
+		mesComptes = new TableauCompte(10, this);
 	}
 
 	/**

@@ -13,7 +13,7 @@ public class Banque implements Detentrice {
 	public Banque(String n){
 		Terminal.ecrireStringln("Création de la banque "+n);
 		nom=n;
-		tous= new TableauCompte(50, this.getNom());
+		tous= new TableauCompte(50, this);
 	}
 
 	/**
