@@ -29,7 +29,7 @@ public class Compte {
 	 */
 	void depot(int n){
 		solde=solde+n;
-		Terminal.ecrireStringln("dépot de "+n+"€ sur compte N°"+this.numero+" banque "+this.createur.getNom());
+		Terminal.ecrireStringln("dépot de "+n+" € sur compte N°"+this.numero+" banque "+this.createur.getNom());
 	}
 
 	/**
@@ -38,7 +38,7 @@ public class Compte {
 	 */
 	void retrait (int n){
 		solde=solde-n;
-		Terminal.ecrireStringln("retrait de "+n+"€ du compte N°"+this.numero+" banque "+this.createur.getNom());
+		Terminal.ecrireStringln("retrait de "+n+" € du compte N°"+this.numero+" banque "+this.createur.getNom());
 	}
 
 	/**
@@ -50,9 +50,9 @@ public class Compte {
 	public void virVersNo (Banque b, int num, int montant ){
 
 
-		Compte c= b.tous.compte(num);
+		Compte c= b.getTabCompte().compte(num);
 		Terminal.ecrireStringln("Virement de "+montant+" € du compte "+this.numero+ " vers le compte de " +
-				"la banque "+b.nom+" numéro "+num);
+				"la banque "+b.getNom()+" numéro "+num);
 		this.retrait(montant);
 		c.depot(montant);
 
@@ -63,7 +63,7 @@ public class Compte {
 	 */
 	void afficher(){
 		//String banque= ;
-		Terminal.ecrireString("Solde du compte n° "+numero+" banque "+this.createur.nom+": "+this.titulaire.getNom()+" ");
+		Terminal.ecrireString("Solde du compte n° "+numero+" banque "+this.createur.getNom()+": "+this.titulaire.getNom()+" ");
 		Terminal.ecrireIntln(solde);
 	}
 }

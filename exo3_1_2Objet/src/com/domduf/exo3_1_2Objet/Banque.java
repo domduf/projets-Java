@@ -2,9 +2,9 @@ package com.domduf.exo3_1_2Objet;
 
 public class Banque {
 
-	String nom;
-	TableauCompte tous;
-	int numero=0;
+	private String nom;
+	private TableauCompte tous;
+	private int numero=0;
 
 	/**
 	 * Création d'un Banque
@@ -107,7 +107,15 @@ public class Banque {
 	public String getNom(){
 		return this.nom;
 	}
-
+	
+	public void setNom(){
+		Terminal.ecrireStringln("Entrez le nouveau nom pour remplacer celui-ci:"+this.nom);
+		nom=Terminal.lireString();
+	}
+	
+	public TableauCompte getTabCompte(){
+		return this.tous;
+	}
 	
 
 

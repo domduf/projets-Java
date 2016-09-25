@@ -34,7 +34,7 @@ public class TableauCompte {
 
 
 	/**
-	 * affiche les numéros 
+	 * affiche le tableau des comptes du createur du tableau
 	 */
 	public void afficherTableauCompte (){
 		Terminal.ecrireStringln("-------------------------------------");

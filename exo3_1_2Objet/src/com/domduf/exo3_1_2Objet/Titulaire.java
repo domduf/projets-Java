@@ -27,11 +27,13 @@ public class Titulaire {
 	 */
 	public void donneProcuration( Titulaire t, Banque b, int numCompte){
 
-		
-
-		t.mesComptes.ajouter(b.tous.compte(numCompte));
+		if (true){
+			t.mesComptes.ajouter(b.getTabCompte().compte(numCompte));
 		Terminal.ecrireStringln(this.getNom()+" donne procuration à "+t.getNom()+" pour son compte n°"+numCompte
 				+" à la banque "+b.getNom());
+		}
+
+		
 
 	}
 
