@@ -3,7 +3,7 @@ package com.domduf.exceptionCoursObjet;
 public class Factorielle {
 	
 	
-	static int factorielle(int n){
+	static int factorielle(int n)throws PasDefini{
 		int res=1;
 		if (n<0){
 			throw new PasDefini();

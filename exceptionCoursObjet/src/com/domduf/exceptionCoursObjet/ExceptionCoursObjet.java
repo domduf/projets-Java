@@ -33,8 +33,12 @@ public class ExceptionCoursObjet {
 			Terminal.ecrireStringln("dans le catch de P()"+
 					"Exception levée et rattrapée: "+e);
 		}
-		catch (Exception e){
+		catch (TerminalException e){ // exception levée par Terminal.java
 			Terminal.ecrireStringln("dans le deuxieme catch de P()\n" +
+					"erreur d'entree class Terminal"+e);
+		}
+		catch (Exception e){
+			Terminal.ecrireStringln("dans le troisieme catch de P()\n" +
 					"erreur d'entrée sortie "+e);
 		}
 		Terminal.ecrireStringln("fin du programme");
