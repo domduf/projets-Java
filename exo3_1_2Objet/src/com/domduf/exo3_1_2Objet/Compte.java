@@ -6,10 +6,10 @@ package com.domduf.exo3_1_2Objet;
  *
  */
 public class Compte {
-	int numero; // numero du compte
-	int solde;  // solde
-	Banque createur; //banque créatrice du Compte
-	Titulaire titulaire;
+	private int numero; // numero du compte
+	private int solde;  // solde
+	private Banque createur; //banque créatrice du Compte
+	private Titulaire titulaire;
 
 	/**
 	 * constructeur par défaut
@@ -23,6 +23,9 @@ public class Compte {
 		titulaire=t;
 	}
 
+	public Titulaire getTitulaire(){
+		return this.titulaire;
+	}
 	/**
 	 * dépot sur le compte
 	 * @param n

@@ -95,7 +95,7 @@ public class Banque implements Detentrice {
 
 		for (int i=0;i<this.tous.longueur;i++){
 
-			if(this.tous.compte(i).titulaire==t){
+			if(this.tous.compte(i).getTitulaire()==t){
 				this.tous.compte(i).afficher();
 			}
 
