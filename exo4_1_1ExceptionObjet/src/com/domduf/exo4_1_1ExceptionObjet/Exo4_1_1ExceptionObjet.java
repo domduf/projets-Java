@@ -6,16 +6,6 @@ public class Exo4_1_1ExceptionObjet  {
 
 	static int division(int indice, int diviseur) {
 
-		//levée de Exception_tab si indice hors des limites [0;9]
-		if (indice<0||indice >= tableau.length){
-			throw new Exception_tab();
-		}
-
-		//levée de Exception_divParZero si essai de division par zéro
-		if (diviseur==0){
-			throw new Exception_divParZero();
-		}
-
 		//levée de Attention_pasJuste si reste !=0
 		if (tableau[indice]%diviseur!=0){
 			int reste=tableau[indice]%diviseur;
@@ -37,48 +27,77 @@ public class Exo4_1_1ExceptionObjet  {
 		// TODO Auto-generated method stub
 
 		int x, y;
-		boolean menu=true;
+		boolean menu;
 		x=0; y=0;
 
+		// entrée de l'indice du tableau tant que non conforme
+		menu=true;
 		while(menu){
 			try {
+				//affiche le tableau des entiers
+				for(int i=0;i<tableau.length;i++){
+					Terminal.ecrireInt(tableau[i]);
+					Terminal.ecrireString(" | ");
+
+				}Terminal.sautDeLigne();
+
+
 				Terminal.ecrireString("entrez l'indice de l'entier à diviser");
 				x=Terminal.lireInt();
+
+				//levée de Exception_tab si indice hors des limites [0;9]
+				if (x<0||x >= tableau.length){
+					throw new Exception_tab();
+				}
+
+				//sortie de la boucle d'entrée
 				menu=false;
+
 			}catch (TerminalException e) {
-				//Terminal.ecrireStringln("rattrapée exception: "+e);
-				Terminal.ecrireStringln("entrez un entier SVP");
+				Terminal.ecrireStringln("ERREUR--------entrez un entier SVP");
+				
+			}catch (Exception_tab e){
+				Terminal.ecrireString("ERREUR--------l'indice est hors des limites [0-");
+				Terminal.ecrireInt(tableau.length-1);
+				Terminal.ecrireStringln("]");
 			}
 		}
+
+
+		// entrée du diviseur tant que non conforme
 		menu=true;
-		
 		while(menu){	
 			try {
 				Terminal.ecrireString("entrez le diviseur");
-				y=Terminal.lireInt();
+				y=Terminal.lireInt();		
+
+				//levée de Exception_divParZero si essai de division par zéro
+				if (y==0){
+					throw new Exception_divParZero();
+				}
 				menu=false;
 			}catch (TerminalException e) {
-				//Terminal.ecrireStringln("rattrapée exception: "+e);
-				Terminal.ecrireStringln("entrez un entier SVP");
+
+				Terminal.ecrireStringln("ERREUR--------entrez un entier SVP");
+
+			}catch (Exception_divParZero e){
+
+				Terminal.ecrireStringln("ERREUR--------division par zéro INTERDITE !\n" +
+						"Retournez à la primaire...");
 			}
 		}
 
+		// appel de la fonction division(x,y)
 		try {
 			Terminal.ecrireString("le resultat est: ");
 			Terminal.ecrireIntln(division(x,y));	
-		}catch (Exception_tab e){
-			Terminal.ecrireStringln("l'indice est hors des limites");
-		}catch (Exception_divParZero e){
-			Terminal.ecrireStringln("division par zéro INTERDITE !\n" +
-					"Retournez à la primaire...");
-
-		}catch (Attention_pasJuste e){
+		}catch (Attention_pasJuste e){// signalement si division non entière
 
 			Terminal.ecrireStringln("Attention la division n'est pas juste");
 		}
 
-
 	}
+
 
 }
 
