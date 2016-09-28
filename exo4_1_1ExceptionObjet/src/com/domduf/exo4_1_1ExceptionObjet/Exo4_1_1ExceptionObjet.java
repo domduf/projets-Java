@@ -41,11 +41,19 @@ public class Exo4_1_1ExceptionObjet  {
 		x=0; y=0;
 
 		while(menu){
-
-
 			try {
 				Terminal.ecrireString("entrez l'indice de l'entier à diviser");
 				x=Terminal.lireInt();
+				menu=false;
+			}catch (TerminalException e) {
+				//Terminal.ecrireStringln("rattrapée exception: "+e);
+				Terminal.ecrireStringln("entrez un entier SVP");
+			}
+		}
+		menu=true;
+		
+		while(menu){	
+			try {
 				Terminal.ecrireString("entrez le diviseur");
 				y=Terminal.lireInt();
 				menu=false;
@@ -53,7 +61,6 @@ public class Exo4_1_1ExceptionObjet  {
 				//Terminal.ecrireStringln("rattrapée exception: "+e);
 				Terminal.ecrireStringln("entrez un entier SVP");
 			}
-
 		}
 
 		try {
