@@ -15,7 +15,7 @@ public class MenuChoix {
 		nomDeMenu=nom;
 		String[] tableau=new String[n];
 		for(int i=0;i<n;i++){
-			tableau[i]="Choix---"+String.valueOf(i);
+			tableau[i]="Choix---"+String.valueOf(i+1);
 		}
 		tabChoix=tableau;
 	}
@@ -26,6 +26,17 @@ public class MenuChoix {
 	}
 
 
+	// getter
+	public void getNomMenu(){
+		Terminal.ecrireStringln(this.nomDeMenu);
+	}
+	//setter
+	public void setNomMenu(){
+		Terminal.ecrireStringln("Entrez le nouveau nom pour "+this.nomDeMenu);
+		this.nomDeMenu=Terminal.lireString();
+	}
+	
+	
 	//methodes d'instances
 	
 	/**
@@ -57,7 +68,7 @@ public class MenuChoix {
 	static int saisirChoix(int n){
 		int choix=0;
 		boolean fini=false;
-		Terminal.ecrireStringln("vous avez un menu proposant "+n+ " valeurs.\n" +
+		Terminal.ecrireStringln("vous avez le choix entre "+n+ " valeurs.\n" +
 				"Entrez votre choix.");
 
 		while (!fini){
@@ -70,10 +81,10 @@ public class MenuChoix {
 				fini=true;
 			}catch (TerminalException e) {
 				Terminal.ecrireStringln("Erreur d'entrée-----\nIL FAUT UN ENTIER" +
-						" ENTRE 1 et "+n+"--------------\n Recommencez:");
+						" ENTRE 1 et "+n+"\n Recommencez:");
 			}catch (ChoixHorsLimites e){
 				Terminal.ecrireStringln("Erreur d'entrée--\nRESTEZ DANS LES LIMITES---" +
-						" [1 - "+n+"]--------------\n Recommencez:");
+						" [1-"+n+"]\n Recommencez:");
 			}
 
 		}
