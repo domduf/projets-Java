@@ -8,12 +8,11 @@ public class LaPersonneLieu extends LaPersonne {
 		super(name, naiss);
 		this.lieuNaissance = l;
 	}
-	
-	public void ecrire(){
-		Terminal.ecrireString(nom+" (");
+
+	public void ecrire() {
+		Terminal.ecrireString(nom + " (");
 		naissance.ecrire();
-		Terminal.ecrireStringln(")\n " +
-				"Né(e) à ");
+		Terminal.ecrireStringln(")\n " + "Né(e) à ");
 		this.lieuNaissance.afficher();
 	}
 

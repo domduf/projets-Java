@@ -14,8 +14,8 @@ public class LaPersonne {
 		this.naissance = naiss;
 	}
 
-	public void ecrire(){
-		Terminal.ecrireString(nom+" (");
+	public void ecrire() {
+		Terminal.ecrireString(nom + " (");
 		naissance.ecrire();
 		Terminal.ecrireStringln(")");
 	}
