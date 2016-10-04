@@ -1,9 +1,10 @@
 package com.domduf.heritageCoursObjet;
 
+
 public class CompteRemunere extends CompteBanquaire {
 
-	double taux;
-	double interets;
+	protected double taux;
+	protected double interets;
 
 	/**
 	 * 

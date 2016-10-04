@@ -1,10 +1,11 @@
 package com.domduf.heritageCoursObjet;
 
+
 public class CompteBanquaire {
 
-	String nomProprietaire;
-	char[] numero;
-	double solde;
+	protected String nomProprietaire;
+	protected char[] numero;
+	protected double solde;
 
 	// constructeurs
 
@@ -78,6 +79,4 @@ public class CompteBanquaire {
 	}
 
 }
-
-class provisionInsuffisanteErreur extends Error {
-}
+class provisionInsuffisanteErreur extends Error{}

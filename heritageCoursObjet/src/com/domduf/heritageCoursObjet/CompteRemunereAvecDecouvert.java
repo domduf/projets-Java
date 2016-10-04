@@ -1,8 +1,9 @@
 package com.domduf.heritageCoursObjet;
 
+
 public class CompteRemunereAvecDecouvert extends CompteRemunere {
 
-	double decouvertMax;
+	protected double decouvertMax;
 
 	public void fixeDecouvertMaximal(double montant) {
 		this.decouvertMax = montant;
@@ -22,7 +23,7 @@ public class CompteRemunereAvecDecouvert extends CompteRemunere {
 		fixeDecouvertMaximal(decouvertMax);
 	}
 
-	public void retrait(double montant) {
+	public void retirer(double montant) {
 		Terminal.ecrireStringln("Appel de retrait sur compte remunere avec decouvert.");
 		if (this.solde - montant < -decouvertMax) {
 			throw new provisionInsuffisanteErreur();
