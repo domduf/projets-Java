@@ -1,23 +1,23 @@
 package com.domduf.exo6_1_3Objet;
 
-public class Salarie {
+public class Employe {
 	
-	int matricule ;
-	String nom ;
-	double indice;
+	public int matricule ;
+	public String nom ;
+	public double indice;
 	
 	static double salaireGeneral=1000.0;
 	static int matriculeListe=0;
 	
 	//constructeurs
-	public Salarie(){
+	public Employe(){
 		this.nom="\"non renseigné\"";
 		this.indice=1;
 		this.matricule=matriculeListe+1;
 		matriculeListe+=1;
 	}
 	
-	public Salarie(String n, double i){
+	public Employe(String n, double i){
 		this.nom=n;
 		this.indice=i;
 		this.matricule=matriculeListe+1;
@@ -31,8 +31,17 @@ public class Salarie {
 	}
 	
 	public double afficheSalaire(){
-		Terminal.ecrireStringln(this.nom+" a un salaire net de "+this.salaireNet()+"€");
+		Terminal.ecrireStringln(this.nom+"("+this.matricule+") a un salaire net de "+this.salaireNet()+"€");
 		return this.salaireNet();
+	}
+	
+	public void afficheIndice(){
+		Terminal.ecrireStringln(this.nom+" a un indice salarial de "+this.indice);
+	}
+	
+	public int afficherMatricule(){
+		Terminal.ecrireStringln(this.nom+" a le matricule "+this.matricule);
+		return this.matricule;
 	}
 	
 	
