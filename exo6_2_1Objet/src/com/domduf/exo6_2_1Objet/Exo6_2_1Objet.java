@@ -29,7 +29,12 @@ public class Exo6_2_1Objet {
 		Terminal.ecrireStringln("---------------------------------");
 		new Huitieme();
 		Terminal.ecrireStringln("---------------------------------");
-	
+		
+		// QUESTION 4
+		new Dixieme(10.5);
+		Terminal.ecrireStringln("---------------------------------");
+		new Dixieme(45,true);
+		Terminal.ecrireStringln("---------------------------------");
 	}
 
 }
