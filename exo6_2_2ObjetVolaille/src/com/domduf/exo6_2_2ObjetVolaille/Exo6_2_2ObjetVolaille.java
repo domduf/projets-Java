@@ -10,10 +10,12 @@ public class Exo6_2_2ObjetVolaille {
 		
 		
 		Elevage monElevage;
-		monElevage=new Elevage("Dom élevage", 150);
+		monElevage=new Elevage("Dom élevage", 30);
 
 		//init des menus
-		String[] menuGeneralChoix = { "achat de volaille", "vente",
+		String[] menuGeneralChoix = { 
+				"achat de volaille", 
+				"vente",
 				"affichage des stocks",
 				"affichage et mise à jour des poids d'abattage",
 				"affichage et mise à jour des cours de ventes",
@@ -30,7 +32,7 @@ public class Exo6_2_2ObjetVolaille {
 		// ----------------------------------------------------------------------------
 		// affichage du menu général de l'application
 		int nav=0;
-		int nav1, nav2, nav3 = 0;
+		int nav1, nav2, nav3,nav4 = 0;
 		
 		while ( nav != menuGeneralChoix.length) {// boucle générale
 
@@ -74,12 +76,20 @@ public class Exo6_2_2ObjetVolaille {
 				monElevage.afficheLesStocks();
 				
 			}break;
+			
 			case 4: {
 				// m a j des poids abattages
-				majPoidsAbbatage.choixDansMenu();
+				
+				monElevage.getPoidsAbattage();
+				
+				nav4=majPoidsAbbatage.choixDansMenu();
+				
+				
+				if (nav4==1||nav4==2) monElevage.setPoidsAbattage(nav4);
 				
 				
 			}break;
+			
 			case 5: {
 				Terminal.ecrireStringln("cas 5");
 			}break;

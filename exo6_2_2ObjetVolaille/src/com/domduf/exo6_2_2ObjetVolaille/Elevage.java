@@ -63,12 +63,46 @@ public class Elevage {
 	}
 	
 	
-	public void vente(){
+	public Volaille[] triStockVendable (){
+		Volaille[] tabStockVendable;
+		tabStockVendable= new Volaille[nbVolaille];
+		int compt=0;
+		String g;
+		int poids;
+		double benef=0;
 		
-	}
-	
+		Terminal.ecrireStringln("------------------------------------");
+		Terminal.ecrireStringln("Tri des volailles vendables");
+		Terminal.ecrireStringln("------------------------------------");
+		
+				
 
+			
+		for (int i=0; i<nbVolaille;i++){
 	
+			
+			Volaille v = this.tabGeneralVolailles[i];
+			g= v.getGenre();
+			
+			poids= v.getPoids();
+			
+			if (g=="poulet" & poids >= Poulet.poidAbattage){
+				tabStockVendable[compt]=v;
+				Terminal.ecrireString("volaille "+v.getGenre()+" n° "+v.getNumero());
+				Terminal.ecrireStringln(" prix de vente: "+Poulet.prixKilo*poids/1000+" €");
+				compt=compt+1;
+			}
+			
+			if (g=="canard" & poids>=Canard.poidAbattage){
+				tabStockVendable[compt]=v;
+				Terminal.ecrireString("volaille "+v.getGenre()+" n° "+v.getNumero());
+				Terminal.ecrireStringln(" prix de vente: "+Canard.prixKilo*poids/1000+" €");
+				compt=compt+1;
+			}
+		}
+		
+		return tabStockVendable;
+	}
 
 	/**
 	 * calcul de la place disponible dans l'élevage
@@ -84,8 +118,46 @@ public class Elevage {
 	 * affichage de la place disponible
 	 */
 	public void affichePlaceDispo() {
+		Terminal.ecrireStringln("++++++++++++++++++++++++++++++++++++++++++++++++");
 		Terminal.ecrireStringln("Il vous reste " + this.restePlace()
 				+ " places dans votre élevage");
+	}
+	
+	
+	public void vente(){
+		
+		
+		
+		if (Poulet.getPoidAbattage()==0.0||Canard.getPoidAbattage()==0.0){
+		
+			Terminal.ecrireStringln("ATTENTION, vous n'avez pas mis à jour les poids d'abattage\n" +
+					"appuyez sur ENTER");
+			Terminal.lireChar();
+			
+		}else{
+			
+			this.triStockVendable();
+			
+			
+		}
+		
+	}
+	
+	public  static void getPoidsAbattage(){
+		Poulet.getPoidAbattage();
+		Canard.getPoidAbattage();
+	}
+	
+	public static void setPoidsAbattage(int nav){
+		
+		if (nav==1) {
+			Poulet.getPoidAbattage();
+			Poulet.setPoidAbattage();}
+		
+		else {
+			Canard.getPoidAbattage();
+			Canard.setPoidAbattage();
+		}
 	}
 
 }

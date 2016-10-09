@@ -6,6 +6,8 @@ public class Volaille {
 	int numero;
 	static int compteur=0;
 	String genre;
+	double poidAbattage;
+
 	
 	public Volaille(int poids){ 
 		compteur+=1;
@@ -21,7 +23,10 @@ public class Volaille {
 		return this.poids;
 	}
 	
-	
-	
+	public int getNumero(){
+		return this.numero;
+	}
+
+
 
 }

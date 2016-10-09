@@ -69,7 +69,7 @@ public class MenuChoix {
 		int choix=0;
 		boolean fini=false;
 		Terminal.ecrireStringln("vous avez le choix entre "+n+ " valeurs.\n" +
-				"Entrez votre choix.");
+				"'-->");
 
 		while (!fini){
 			try{
