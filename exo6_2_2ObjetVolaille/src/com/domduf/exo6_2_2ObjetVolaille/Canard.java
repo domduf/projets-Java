@@ -5,13 +5,16 @@ public class Canard extends Volaille{
 	
 	static double prixKilo;
 	static double poidAbattageCanard;
-	static String genre="canard";
+	 String genre;
 	
 	Canard (int poids){
-		super(poids, genre);
-		
+		super(poids);
+		this.genre="canard";
 	}
 	
+	public String  getGenre(){
+		return this.genre;
+	}
 	
 	public void setPrixKilo(double prixK){
 		prixKilo=prixK;

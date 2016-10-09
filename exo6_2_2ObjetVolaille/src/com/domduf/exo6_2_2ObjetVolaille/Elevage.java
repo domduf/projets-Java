@@ -53,8 +53,9 @@ public class Elevage {
 	public void afficheLesStocks(){
 		
 		for (int i=0; i<nbVolaille;i++){
-			Terminal.ecrireStringln("-"+this.tabGeneralVolailles[i].numero+"- "+
-					this.tabGeneralVolailles[i].genre);
+			Terminal.ecrireStringln("-"+this.tabGeneralVolailles[i].numero+"- \t"+
+					this.tabGeneralVolailles[i].getGenre()+"\t poids: "+
+					this.tabGeneralVolailles[i].getPoids()+" g");
 		}
 	}
 	

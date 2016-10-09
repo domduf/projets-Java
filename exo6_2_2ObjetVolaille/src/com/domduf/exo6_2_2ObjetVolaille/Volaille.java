@@ -7,12 +7,20 @@ public class Volaille {
 	static int compteur=0;
 	String genre;
 	
-	public Volaille(int poids, String g){ 
+	public Volaille(int poids){ 
 		compteur+=1;
 		this.numero=compteur;
 		this.poids=poids;
-		this.genre=g;	
+		}
+	
+	public String  getGenre(){
+		return this.genre;
 	}
+	
+	public int getPoids(){
+		return this.poids;
+	}
+	
 	
 	
 

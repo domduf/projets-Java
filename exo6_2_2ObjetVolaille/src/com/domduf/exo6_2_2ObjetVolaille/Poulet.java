@@ -5,11 +5,15 @@ public class Poulet extends Volaille{
 	
 	static double prixKilo;
 	static double poidAbattagePoulet;
-	static String genre="poulet";
+	String genre;
 	
 	public Poulet (int poids){
-		super(poids, genre);
-		
+		super(poids);
+		this.genre="poulet";
+	}
+	
+	public String  getGenre(){
+		return this.genre;
 	}
 
 	public void setPrixKilo(double prixK){
