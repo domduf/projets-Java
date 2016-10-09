@@ -5,6 +5,7 @@ public class Elevage {
 	Volaille[] tabGeneralVolailles;
 	String nomElevage;
 	static int nbVolaille = 0;
+	static double budget=1000.0;
 
 	Elevage(String n, int v) {
 		nomElevage = n;
@@ -54,8 +55,14 @@ public class Elevage {
 		
 		for (int i=0; i<nbVolaille;i++){
 			Terminal.ecrireStringln("-"+this.tabGeneralVolailles[i].numero+"- "+
-					this.tabGeneralVolailles[i].genre);
+					this.tabGeneralVolailles[i].genre+" poids: "+
+					this.tabGeneralVolailles[i].poids+"g.");
 		}
+	}
+	
+	
+	public void vente(){
+		
 	}
 	
 
