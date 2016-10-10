@@ -10,7 +10,7 @@ public class Repas {
 	public Repas(String n, Plat e, Plat p, Plat d) {
 		if (e.type != Type.entree || p.type != Type.principal
 				|| d.type != Type.dessert) {
-			Terminal.ecrireStringln("Votre " + n + " est vraiement nul...");
+			Terminal.ecrireStringln("Votre " + n + " est vraiment nul...");
 			Terminal.ecrireStringln("Un des plat ne correspond pas à un équilibre indispensable à la santé...");
 		} else {
 			this.nom = n;
@@ -38,5 +38,20 @@ public class Repas {
 
 		}
 
+	}
+	
+	public void afficheAddition(){
+		Terminal.ecrireStringln("                               __________");
+		Terminal.ecrireStringln("ADDITION net:\t\t\t"+this.calculAddition()+" €uros");
+	}
+	
+	
+	public double calculAddition (){
+		double addition=0;
+		addition= 
+				this.entree.prix+
+				this.principal.prix+
+				this.dessert.prix;
+		return addition;
 	}
 }

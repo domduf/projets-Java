@@ -14,12 +14,12 @@ public class ExamAnnaleSession2016Exo1 {
 		
 	
 		//entree
-		Plat saladeGarnie = new Plat ("Salade garnie à la noix",1.23,entree);
+		Plat saladeGarnie = new Plat ("Salade garnie à la noix",12.35,entree);
 		//plat principal
-		Plat rotiPorc= new Plat("Roti de port façon Domduf",5.35,principal);
+		Plat rotiPorc= new Plat("Roti de port façon Domduf",50.53,principal);
 		rotiPorc.afficherPlat();
 		//dessert
-		Plat mousseChoc= new Plat("Mousse au chocolat",1.20,dessert);
+		Plat mousseChoc= new Plat("Mousse au chocolat",12.60,dessert);
 		mousseChoc.afficherPlat();
 			
 		Repas repasNul = new Repas ("repas nul ",mousseChoc,rotiPorc, mousseChoc );
@@ -27,6 +27,7 @@ public class ExamAnnaleSession2016Exo1 {
 		
 		Repas repasEquilibre =new Repas ("C est bon ça !!!", saladeGarnie, rotiPorc,mousseChoc );
 		repasEquilibre.afficheMenu();
+		repasEquilibre.afficheAddition();
 		
 
 	}
