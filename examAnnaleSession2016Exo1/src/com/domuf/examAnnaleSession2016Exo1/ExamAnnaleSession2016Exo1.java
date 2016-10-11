@@ -31,6 +31,15 @@ public class ExamAnnaleSession2016Exo1 {
 		
 		Repas repaRapidos = new Repas("sur le pouce",rotiPorc,mousseChoc  );
 		repaRapidos.afficheMenu();
+		repaRapidos.afficheAddition();
+		
+		Repas repaGrugeur = new Repas ("Le grugeur",mousseChoc,rotiPorc);
+		repaGrugeur.afficheMenu();
+		repaGrugeur.calculAddition();
+		
+		Repas repaViandard = new Repas ("Le viandard",rotiPorc);
+		repaViandard.afficheMenu();
+		repaViandard.afficheAddition();
 		
 		Repas repasEquilibre =new Repas ("C est bon ça !!!", saladeGarnie, rotiPorc,mousseChoc );
 		repasEquilibre.afficheMenu();
