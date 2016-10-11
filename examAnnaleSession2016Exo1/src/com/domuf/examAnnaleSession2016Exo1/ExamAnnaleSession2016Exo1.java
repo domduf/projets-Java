@@ -8,6 +8,10 @@ public class ExamAnnaleSession2016Exo1 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		Restaurant restoDomduf=new Restaurant("Chez Domduf", 15);
+		
+		Carte cartDodo=new Carte(restoDomduf,"Carte du soleil", 3, 4, 4);
+		
 		Type entree = Type.entree;
 		Type principal =Type.principal;
 		Type dessert =Type.dessert;
@@ -24,6 +28,9 @@ public class ExamAnnaleSession2016Exo1 {
 			
 		Repas repasNul = new Repas ("repas nul ",mousseChoc,rotiPorc, mousseChoc );
 		repasNul.afficheMenu();
+		
+		Repas repaRapidos = new Repas("sur le pouce",rotiPorc,mousseChoc  );
+		repaRapidos.afficheMenu();
 		
 		Repas repasEquilibre =new Repas ("C est bon ça !!!", saladeGarnie, rotiPorc,mousseChoc );
 		repasEquilibre.afficheMenu();

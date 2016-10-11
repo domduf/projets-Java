@@ -23,15 +23,38 @@ public class Repas {
 		}
 	}
 
-	public void afficheMenu(){
+	public Repas(String n, Plat p1, Plat p2) {// repas rapide
+		if (p1.type == Type.entree & p2.type == Type.principal) {
+			this.nom = n;
+			this.entree = p1;
+			this.principal = p2;
+			Terminal.ecrireStringln("Votre repas rapide est enregistré.\n  Merci.");
+		} else if (p1.type == Type.principal & p2.type == Type.dessert) {
+			this.nom = n;
+			this.principal = p1;
+			this.dessert = p2;
+			Terminal.ecrireStringln("Votre repas rapide est enregistré.\n  Merci.");
 
-		try{
+		} else{
+			Terminal.ecrireStringln("Votre " + n
+				+ " n'est pas compatible RAPIDE...");
+			Terminal.ecrireStringln("Un des plat ne correspond pas.");
+		}
+		
+		
+
+
+	}
+
+	public void afficheMenu() {
+
+		try {
 			this.entree.afficherPlat();
 			this.principal.afficherPlat();
-			this.dessert.afficherPlat();		
+			this.dessert.afficherPlat();
 			Terminal.ecrireStringln("-----6969696969696969696969696969----");
-		Terminal.ecrireStringln("   Nom du repas : "+this.nom);
-		}catch (Exception e){
+			Terminal.ecrireStringln("   Nom du repas : " + this.nom);
+		} catch (Exception e) {
 			Terminal.ecrireStringln("++++++++++++++++++++++++++++++++");
 			Terminal.ecrireStringln("Votre repas n'est pas enregistré");
 			Terminal.ecrireStringln("++++++++++++++++++++++++++++++++");
@@ -39,19 +62,16 @@ public class Repas {
 		}
 
 	}
-	
-	public void afficheAddition(){
+
+	public void afficheAddition() {
 		Terminal.ecrireStringln("                               __________");
-		Terminal.ecrireStringln("ADDITION net:\t\t\t"+this.calculAddition()+" €uros");
+		Terminal.ecrireStringln("ADDITION net:\t\t\t" + this.calculAddition()
+				+ " €uros");
 	}
-	
-	
-	public double calculAddition (){
-		double addition=0;
-		addition= 
-				this.entree.prix+
-				this.principal.prix+
-				this.dessert.prix;
+
+	public double calculAddition() {
+		double addition = 0;
+		addition = this.entree.prix + this.principal.prix + this.dessert.prix;
 		return addition;
 	}
 }

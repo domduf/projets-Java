@@ -6,6 +6,7 @@ enum Type {
 	principal("plat principal"),
 	dessert("dessert");
 	
+	//variables d'instances
 	private String name = "";
 	
 	//constructeur
