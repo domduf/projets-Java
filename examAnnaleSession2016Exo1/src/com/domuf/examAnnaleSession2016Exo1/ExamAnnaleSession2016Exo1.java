@@ -41,6 +41,8 @@ public class ExamAnnaleSession2016Exo1 {
 		repaRapidos.afficheMenu();
 		repaRapidos.afficheAddition();
 		
+		
+		
 		Repas repasEquilibre =new Repas ("C est bon ça !!!", saladeGarnie, rotiPorc,mousseChoc );
 		repasEquilibre.afficheMenu();
 		repasEquilibre.afficheAddition();
