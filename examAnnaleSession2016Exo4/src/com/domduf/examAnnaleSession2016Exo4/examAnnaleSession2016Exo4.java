@@ -8,7 +8,8 @@ public class examAnnaleSession2016Exo4 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Carnivore loup = new Carnivore("loup");
+		Carnivore loup = new Carnassier("loup");
+		
 		
 
 	}
