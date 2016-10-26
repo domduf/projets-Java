@@ -23,6 +23,8 @@ public class examAnnaleSession2016Exo4 {
 		hyene.mange(lapin);
 		lapin.statut();
 		
+		lapin.mange(hyene);
+		
 		loup.mange(lapin);
 		lapin.statut();
 		

@@ -10,7 +10,7 @@ public class Carnassier extends Carnivore implements Nourriture, Predateur {
 
 	public void mange(Nourriture n) {
 
-		if (!n.disTonStatut()) {
+		if (n.disTonStatut()) {// si vivant
 			Terminal.ecrireString(this.nom + " mange ");
 			n.disTonNom();
 			n.estMangéPar(this);

@@ -10,7 +10,8 @@ public interface Nourriture {
 	
 	boolean disTonStatut();
 	
-	//boolean recoitMessageMort();
 	
+		
+	}
 
-}
+
