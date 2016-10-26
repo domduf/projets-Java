@@ -1,6 +1,6 @@
 package com.domduf.examAnnaleSession2016Exo4;
 
-public class Carnivore extends Animal implements Nourriture {
+public class Carnivore extends Animal implements Nourriture, Predateur {
 
 	
 
@@ -11,12 +11,15 @@ public class Carnivore extends Animal implements Nourriture {
 	
 	}
 
-	/*
+	
 	public void mange(Nourriture n) {
-		
-		
-	}*/
 
+		Terminal.ecrireString(this.nom+" mange ");
+		n.disTonNom();
+		n.estMangéPar(this);
+		
+		
+	}
 
 
 	public void estMangéPar(Predateur p) {

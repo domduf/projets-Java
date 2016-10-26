@@ -15,6 +15,7 @@ public class Animal implements Predateur, Nourriture {
 	public Animal(String n) {
 		this.nom = n;
 		this.statut = true;
+		Terminal.ecrireStringln("==========================================");
 		Terminal.ecrireString("création d'un animal du nom de " + this.nom);
 	}
 
@@ -43,8 +44,7 @@ public class Animal implements Predateur, Nourriture {
 		Terminal.ecrireString(this.nom+" mange ");
 		n.disTonNom();
 		n.estMangéPar(this);
-		
-		
+	
 	}
 	
 	public void estMangéPar(Predateur p){
