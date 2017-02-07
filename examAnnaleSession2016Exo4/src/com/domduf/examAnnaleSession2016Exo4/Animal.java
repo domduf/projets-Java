@@ -2,9 +2,9 @@ package com.domduf.examAnnaleSession2016Exo4;
 
 public class Animal implements Predateur, Nourriture {
 
-	String nom;
+	protected String nom;
 
-	boolean statut;
+	protected boolean statut;
 
 	public Animal() {
 		this.nom = "inconnu";
@@ -36,6 +36,10 @@ public class Animal implements Predateur, Nourriture {
 
 	public void disTonNom(){
 		Terminal.ecrireStringln(""+this.nom);
+	}
+	
+	public void setTonNom(String n){
+		this.nom=n;
 	}
 	
 	

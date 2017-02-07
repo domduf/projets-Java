@@ -10,6 +10,10 @@ public class Carnivore extends Animal implements Nourriture, Predateur {
 		Terminal.ecrireStringln(", je suis un carnivore");
 	
 	}
+	
+	public Carnivore(){
+	
+	}
 
 	
 	public void mange(Nourriture n) {

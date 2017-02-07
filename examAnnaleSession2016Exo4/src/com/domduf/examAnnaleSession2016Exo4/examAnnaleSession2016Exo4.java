@@ -8,8 +8,15 @@ public class examAnnaleSession2016Exo4 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		Carnivore chat = new Carnivore();
+		chat.statut();
+		
 		Carnivore loup = new Carnivore("loup");
 		loup.statut();
+		
+		loup.mange(chat);
+		chat.setTonNom("Tigrou");
+		chat.statut();
 		
 		Herbivore lapin= new Herbivore("lapinou");
 		lapin.statut();
