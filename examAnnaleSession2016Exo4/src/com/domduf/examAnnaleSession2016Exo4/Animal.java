@@ -9,7 +9,7 @@ public class Animal implements Predateur, Nourriture {
 	public Animal() {
 		this.nom = "inconnu";
 		this.statut = true;
-		Terminal.ecrireStringln("création d'un animal du nom de " + this.nom);
+		Terminal.ecrireString("création d'un animal du nom de " + this.nom);
 	}
 
 	public Animal(String n) {
@@ -52,7 +52,11 @@ public class Animal implements Predateur, Nourriture {
 	}
 	
 	public void estMangéPar(Predateur p){
-		Terminal.ecrireStringln(this.nom+ "est mangé");
+		
+		if (AuMenu.peutManger(p, this)){
+		Terminal.ecrireStringln(this.nom+ "est mangé");	
+		}
+		
 		
 	}
 	

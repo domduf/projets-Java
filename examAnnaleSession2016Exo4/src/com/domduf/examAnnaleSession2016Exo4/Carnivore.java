@@ -12,7 +12,7 @@ public class Carnivore extends Animal implements Nourriture, Predateur {
 	}
 	
 	public Carnivore(){
-	
+		Terminal.ecrireStringln(", je suis un carnivore");
 	}
 
 	
@@ -27,8 +27,16 @@ public class Carnivore extends Animal implements Nourriture, Predateur {
 
 
 	public void estMangéPar(Predateur p) {
+		if (p.getClass().getName().contains("Carnassier")){
+			Terminal.ecrireStringln("mangé par un Carnassier...");
+		}
+		else if (p.getClass().getName().contains("Carnassier") &
+				statut==false){
+			Terminal.ecrireStringln("mangé DEAD par un Carnassier...");
+			
+		}
 		this.statut=false;
-
+		
 	}
 
 }

@@ -10,14 +10,10 @@ public class AuMenu {
 	 * @return auMenu
 	 */
 	public static  boolean peutManger(Predateur p, Nourriture n){
-	
-		
-		boolean auMenu=true;
-	
-		
-	
-	
-	return auMenu;
+
+		Terminal.ecrireStringln("dans peutManger de AuMenu" );
+		return false;
+
 	}
 
 }

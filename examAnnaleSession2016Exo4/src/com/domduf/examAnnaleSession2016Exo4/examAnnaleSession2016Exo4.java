@@ -9,19 +9,27 @@ public class examAnnaleSession2016Exo4 {
 		// TODO Auto-generated method stub
 		
 		Carnivore chat = new Carnivore();
+		Carnivore loup = new Carnivore("loup");		
+		chat.setTonNom("Tigrou");
+		Herbivore lapin= new Herbivore("lapinou");
+		Carnassier hyene =new Carnassier("la hyenne");
+		
+		
 		chat.statut();
 		
-		Carnivore loup = new Carnivore("loup");
+
 		loup.statut();
 		
+		
+		
 		loup.mange(chat);
-		chat.setTonNom("Tigrou");
+
 		chat.statut();
 		
-		Herbivore lapin= new Herbivore("lapinou");
+
 		lapin.statut();
 		
-		Carnassier hyene =new Carnassier("la hyenne");
+
 		hyene.statut();
 		
 		hyene.mange(loup);
@@ -37,6 +45,9 @@ public class examAnnaleSession2016Exo4 {
 		
 		hyene.mange(lapin);
 		lapin.statut();
+		
+		
+		Terminal.ecrireStringln("----------------------------");
 		
 		lapin.estMangéPar(loup);
 		lapin.statut();		
