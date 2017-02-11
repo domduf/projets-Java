@@ -69,7 +69,7 @@ public class ExoCorrige20016_7_1 {
 	 * @param index
 	 * @param tableau
 	 * @param nbMaxDeNote
-	 * @return
+	 * @return le nouvel index
 	 */
 	public static int ajouterUneNote( int index, int[] tableau, int nbMaxDeNote){
 		
@@ -90,7 +90,7 @@ public class ExoCorrige20016_7_1 {
 	 * @param index
 	 * @param tabNotes
 	 * @param nbMaxDeNote
-	 * @return
+	 * @return le nouvel index
 	 */
 	public static int ajouterPlusieursNotes(int index, int[] tabNotes, int nbMaxDeNote){
 
