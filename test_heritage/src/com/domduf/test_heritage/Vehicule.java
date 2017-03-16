@@ -36,6 +36,12 @@ public class Vehicule {
 		tabVehicule[id]=this;
 		noId++;
 	}
+	public int getId(){
+	  Terminal.ecrireStringln( "n° d'Id:"+ this.id+" "+this.nom);
+	  return this.id;
+	}
+	
+	
 	
 	/**
 	 * 
@@ -69,6 +75,9 @@ public class Vehicule {
 		this.puissance=w;
 	}	
 	
+  public void setPuissanceCh(int c){
+    this.puissance=Vehicule.convertiChVersWatt(c);
+  }	
 	
 	/**
 	 * 
@@ -79,6 +88,15 @@ public class Vehicule {
 		return arrondir((double)w/736 , 2);
 	}
 	
+	
+/**
+ * 
+ * @param Puissance en Ch à convertir en Watt
+ * @return Puissance en Watt
+ */
+  public static int convertiChVersWatt(int c){
+    return c*736;
+  }	
 	
 	/**
 	 * 

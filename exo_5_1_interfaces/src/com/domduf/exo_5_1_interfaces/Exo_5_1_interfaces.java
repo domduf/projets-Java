@@ -29,10 +29,14 @@ public class Exo_5_1_interfaces {
 			tabCriant[i].crie();
 		}
 		
-		Terminal.ecrireStringln(couillon.getClass().getSimpleName());
+		ducon.coure();
 		
+		Chien couillon2=(Chien)couillon;
+		couillon2.coure();
 		
+		//Terminal.ecrireStringln(couillon.getClass().getSimpleName());
 		
+
 
 	}
 

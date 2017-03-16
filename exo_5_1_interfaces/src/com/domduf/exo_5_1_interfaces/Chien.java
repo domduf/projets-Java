@@ -10,5 +10,10 @@ public class Chien implements PeutCrier {
 	public void crie(){
 		Terminal.ecrireStringln("Moi, "+this.nom+" j' aboie comme un con...");
 	}
+	
+	public void coure(){
+    Terminal.ecrireStringln("Moi, "+this.nom+" j'aime courir comme un con...");
+	  
+	}
 
 }

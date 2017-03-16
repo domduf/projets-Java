@@ -11,5 +11,7 @@ public class Chat implements PeutCrier {
 	public void crie(){
 		Terminal.ecrireStringln("Moi, "+this.nom+" je miaule...");
 	}
+	
+
 
 }

@@ -15,9 +15,9 @@ public class Test_heritage {
 		v2.setNom("Ma 505");
 		Voiture v3 = new Voiture();
 		v3.setNom("Ma Porshe 911 Carrera S");
-		v3.setPuissance(309000);
+		v3.setPuissanceCh(320);
 		
-		
+		v3.getId();
 
 		v3.getCarteGrise();
 		v3.creveUnPneu(2);
