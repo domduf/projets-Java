@@ -12,7 +12,7 @@ public class Test_heritage {
 		
 		Vehicule v1 = new  Vehicule();
 		Voiture v2 = new Voiture();
-		v2.setNom("Ma 505");
+		v2.setNom("Ma 307");
 		Voiture v3 = new Voiture();
 		v3.setNom("Ma Porshe 911 Carrera S");
 		v3.setPuissanceCh(320);

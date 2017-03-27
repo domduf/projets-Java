@@ -11,7 +11,9 @@ public class Bouteille {
   
   // on débouche
   public void ouvre(){
+    
     this.bouchee=false;
+    
   }
   
   //on remet le bouchon

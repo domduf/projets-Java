@@ -36,6 +36,8 @@ public class Vehicule {
 		tabVehicule[id]=this;
 		noId++;
 	}
+	
+	
 	public int getId(){
 	  Terminal.ecrireStringln( "n° d'Id:"+ this.id+" "+this.nom);
 	  return this.id;
@@ -104,7 +106,7 @@ public class Vehicule {
 	 * @param nbSignificatif
 	 * @return un double avec autant de nbSignificatif après la virgule
 	 */
-	public static double arrondir(double a, int nbSignificatif){
+	protected static double arrondir(double a, int nbSignificatif){
 		BigDecimal bd = new BigDecimal(a);
 		bd= bd.setScale(nbSignificatif,BigDecimal.ROUND_DOWN);
 		a = bd.doubleValue();
