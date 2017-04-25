@@ -1,4 +1,4 @@
-package sapinDeMonVoisin;
+package com.domduf.sapinDuVoisin2;
 
 public class Voisin {
 	
@@ -7,7 +7,7 @@ public class Voisin {
 	private boolean possedeJardin= false;
 	
 	Voisin(String sonNom){
-		nom= sonNom;
+		this.nom= sonNom;
 		
 	}
 	
