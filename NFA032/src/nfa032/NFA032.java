@@ -17,7 +17,9 @@ public class NFA032 {
     
     // définition des composants
     
-    Composant generateur= new Composant(TypeComposant.actif); 
+    Composant generateur= new Composant(TypeComposant.actif, 2); 
+    
+    Terminal.ecrireStringln("voici le type: "+generateur.type.donneType());
     
     
     // branchement des composants aux noeuds
