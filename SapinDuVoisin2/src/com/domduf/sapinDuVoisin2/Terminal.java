@@ -1,4 +1,4 @@
-package sapinDeMonVoisin;
+package com.domduf.sapinDuVoisin2;
 
 
 import java.io.BufferedReader;
