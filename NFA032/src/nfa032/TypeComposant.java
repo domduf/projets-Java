@@ -2,8 +2,10 @@ package nfa032;
 
 public enum TypeComposant {
   
-  actif ("composant actif"),
-  passif("composant passif");
+  
+  passif("composant passif"),
+  capacite("composant capacitif"),
+  self("composant selfique");
   
   
   private String nom;

@@ -8,24 +8,26 @@ public class NFA032 {
   public static void main(String[] args) {
     // TODO Auto-generated method stub
     
-    // définition des noeuds et du nombre de connection;
-    
-    Noeud debut = new Noeud(); // génerateur borne debut
-    Noeud fin = new Noeud();    // génerateur borne fin
-       
+
     
     
     // définition des composants
     
-    Composant generateur= new Composant(TypeComposant.actif, 2); 
+    Composant R1= new Resistance(500); 
     
-    Terminal.ecrireStringln("voici le type: "+generateur.type.donneType());
-    
-    
-    // branchement des composants aux noeuds
+    Terminal.ecrireStringln("voici le type: "+R1.getType());
+    Terminal.ecrireStringln(R1.getValeur());
     
     
-    // entrée des caracteristiques de la tension aux bornes début et fin
+    
+    
+    
+    // menu de choix de filtres
+    
+    
+    // affichage des caracteristique des filtres
+    
+    
     
     
     

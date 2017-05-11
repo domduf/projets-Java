@@ -4,18 +4,22 @@ public class Composant {
   
   protected TypeComposant type;
   protected int nbPole;
+  protected String nom;
   
   
   // constructeur par défaut
   Composant(){
-    type= TypeComposant.passif;
-    nbPole=2;
-    
+    nbPole=2; 
   }
   
-  Composant( TypeComposant type, int nb){
-    this.type = type;
-    this.nbPole = nb;
+  public String getType(){
+    return this.type.donneType();
   }
+  
+  
+  public String getValeur(){
+    return "Ce composant est une ";
+  }
+
 
 }
