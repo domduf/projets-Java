@@ -1,7 +1,7 @@
 package nfa032;
 
 public class Resistance extends Composant {
-  
+
   static int indice=0;
   protected int numero;
   protected int r; // valeur de R
