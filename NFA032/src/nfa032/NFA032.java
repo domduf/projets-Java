@@ -29,6 +29,16 @@ public class NFA032 {
     
     
     
+    
+    monFiltre.afficheFonction();
+    
+    // récuperation des tableaux[ de tableaux [de composants]]
+    // par exemple si filtre 1er ordre passe-haut
+    // resistance[]= { resistance1}
+    // condensateur[] = { condo1 }
+    // self[] = {}  
+    
+    
     //----------définition des composants en fonction du type de filtre---
     
     Composant R1= new Resistance(500); 
