@@ -6,58 +6,107 @@ public class NFA032 {
    * @param args
    */
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
+    
+    // voir site http://www.gecif.net/articles/genie_electrique/filtre/#2
+    //pour les calculs de filtre 1er et 2nd ordre
     
     //----------------définition des menus------------------------
     
+    String choixGeneral[]= { "Sortir du programme", "Nouveau filtre",
+                            "Choix des composants","Calculer autre chose avec ce filtre"};
+    Menu menuGeneral = new Menu("Maintenant vous voulez ?", choixGeneral);
+ 
+    //déclaration et init variables
     
-    String[] tabMenuFiltre= new String[2];
-    tabMenuFiltre[0]="1er ordre";
-    tabMenuFiltre[1]="2eme ordre";
-    Menu menuFiltre = new Menu("choixfiltre", tabMenuFiltre);
-    
-    
-    //----------------menu de choix de filtres-------------------
-    
-    Terminal.ecrireStringln("ce menu contient "+menuFiltre.getNombreChoix()+" choix");
-    int odreDufiltre= menuFiltre.afficheSaisitRetourneChoix();
+    Filtre monFiltre = new Filtre(0); // filtre d'ordre 0 par défaut ... "passe-tout"
+    boolean fin=false; // pour pouvoir entrer dans la boucle de choix générale
     
     
-    // création d'un objet filtre dont l'ordre est fonction du choix précédent
+    // boucle de calcul tant que l'utilisateur ne veut pas quitter
+
+    while (! fin){
+      
+      // affiche le menu général et entre le choix
+      int choixMenu=menuGeneral.afficheSaisitRetourneChoix();
+
+      if (choixMenu==1) {
+        fin = true;
+      }
+      
+      if (choixMenu==2) {
+        
+       
+        // saisir l'ordre du filtre-------------------
+        monFiltre.setOrdre();
+       
+        Terminal.ecrireStringln("Vous avez choisit un filtre d'ordre "+monFiltre.getOrdre());
+      }
+      
+
+      
+      
+      if (choixMenu==3) {
+        
+        
+        // choix des composants du filtre
+        
+        monFiltre.choixDesComposants();
+        
+      }
+     
+       
+
+      if (choixMenu==4) {
+        
+      //---------------que veut faire l'utilisateur ----------------
+        //-----construction du menu de choix et entrée de la valeur---
+        
+        String choix[]= {"Affiche l' attenuation", "Affiche la phase"};
+        Menu choixAffichage = new Menu("Que voulez vous faire ?", choix);
+        
+        // on stocke le choix dans un entier
+        int queFaire=choixAffichage.afficheSaisitRetourneChoix();
+        
+         
+        // affichage suivant le choix fait plus haut
+        
+        if (queFaire==1) {
+
+          monFiltre.calculTableauAttenuation();
+
+        }
+        else if (queFaire==2) {
+          monFiltre.calculTableauPhase();
+        }
+        
+          // on complètera éventuellement suivant l'implémentation future
+        
+        // Affichage des résultats 
+        
+        if (queFaire==1) {
+
+          monFiltre.afficheTableauAttenuation();
+
+        }
+        else if (queFaire==2) {
+          monFiltre.afficheTableauPhase();
+        }
+        
+      }
+      
+      
+      
+
+
+      
+    }
     
-    Filtre monFiltre=new Filtre(odreDufiltre);
+    Terminal.ecrireStringln("Merci et à bientôt...bon filtre");
     
-    
-    
-    
-    monFiltre.afficheFonction();
-    
-    // récuperation des tableaux[ de tableaux [de composants]]
-    // par exemple si filtre 1er ordre passe-haut
-    // resistance[]= { resistance1}
-    // condensateur[] = { condo1 }
-    // self[] = {}  
-    
-    
-    //----------définition des composants en fonction du type de filtre---
-    
-    Composant R1= new Resistance(500); 
-    
-    Terminal.ecrireStringln("voici le type: "+R1.getType());
-    Terminal.ecrireStringln(R1.getValeur());
-    
-    
-    
-    
-    
-    // affichage des caracteristique du filtre
-    
-    
-    
-    
-    
-    
-    
+
+   
+   
+  
 
   }
 

@@ -12,6 +12,8 @@ public class Composant {
     nbPole=2; 
   }
   
+  
+  
   public String getType(){
     return this.type.donneType();
   }

@@ -2,19 +2,21 @@ package nfa032;
 
 public class Resistance extends Composant {
 
+  // variable de classe
   static int indice=0;
+  
+  // variables d'instance
   protected int numero;
-  protected int r; // valeur de R
-  protected double q; // qualité +/- %
+  protected double resistance; // valeur de R
+ 
   
   public Resistance(int R) {
  
     super();
-    super.type= TypeComposant.passif;
+    super.type= TypeComposant.resistif;
     
     
-    this.r =R;
-    this.q=10;
+    this.resistance =R;
     this.numero=indice;
     super.nom="Resistance";
     indice+=1;
@@ -24,7 +26,7 @@ public class Resistance extends Composant {
   
   public String getValeur(){
     return super.getValeur() +
-     "résistance de "+Integer.toString(this.r)+" Ohms" ;
+     "résistance de "+Double.toString(this.resistance)+" Ohms" ;
     
   }
   

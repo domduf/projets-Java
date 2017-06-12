@@ -14,9 +14,11 @@ public class Menu {
 
 	//constructeurs
 	
-	/*
-	 * construit un menu avec un choix parmis n
-	 */
+/**
+ * construit un menu avec un nom et un choix parmis n
+ * @param nom
+ * @param n
+ */
 	Menu(String nom, int n){
 		//construit une chaine de n caracteres par exemple {"1","2","3"}
 		//et le menu correspondant
@@ -28,19 +30,25 @@ public class Menu {
 		tabChoix=tableau;
 	}
 
-	
-	Menu(String nom, String[] tab){
+/**
+ * Construit un menu avec un nom et des choix dont on entre le tableau de String
+ * @param nom
+ * @param choix
+ */
+	Menu(String nom, String[] choix){
 		nomDeMenu=nom;
-		tabChoix=tab;
+		tabChoix=choix;
 	}
 
 
-	// getter
+	/**
+	 * retourne le nom du menu
+	 */
 	public void getNomMenu(){
 		Terminal.ecrireStringln(this.nomDeMenu);
 	}
 	
-	
+
 	public int getNombreChoix(){
 	  return this.tabChoix.length;
 	}

@@ -3,9 +3,9 @@ package nfa032;
 public enum TypeComposant {
   
   
-  passif("composant passif"),
-  capacite("composant capacitif"),
-  self("composant selfique");
+  resistif("composant passif"),
+  capacitif("composant capacitif"),
+  selfique("composant selfique");
   
   
   private String nom;
