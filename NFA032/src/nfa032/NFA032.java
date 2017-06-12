@@ -18,13 +18,15 @@ public class NFA032 {
  
     //déclaration et init variables
     
-    Filtre monFiltre = new Filtre(0); // filtre d'ordre 0 par défaut ... "passe-tout"
+    Filtre monFiltre = new Filtre(); // filtre d'ordre 0 par défaut ... "passe-tout"
     boolean fin=false; // pour pouvoir entrer dans la boucle de choix générale
     
     
     // boucle de calcul tant que l'utilisateur ne veut pas quitter
 
     while (! fin){
+     
+      monFiltre.afficheFonction();
       
       // affiche le menu général et entre le choix
       int choixMenu=menuGeneral.afficheSaisitRetourneChoix();

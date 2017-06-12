@@ -15,6 +15,7 @@ public class Filtre implements UtiliseMenu {
   // constructeur
   Filtre(){
     this.fonction=FonctionFiltre.passeTOUT;
+    this.ordre=0;
   }
  
   /**
@@ -23,6 +24,7 @@ public class Filtre implements UtiliseMenu {
    */
   Filtre(int o){
     this.ordre=o;
+    
   }
   
   
@@ -40,7 +42,13 @@ public class Filtre implements UtiliseMenu {
   // methodes d'instances
   
   public void afficheFonction(){
-    Terminal.ecrireStringln("ce filtre d'ordre "+this.getOrdre()+" a pour fonction"+this.fonction.getFonction());
+    
+    if (this.ordre==0) {
+      Terminal.ecrireStringln("ce filtre d'ordre "+this.getOrdre()+
+          " a pour fonction"+this.fonction.getFonction());
+      
+    }
+
   }
   
   //choix du Filtre
