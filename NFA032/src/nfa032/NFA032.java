@@ -73,26 +73,24 @@ public class NFA032 {
         // affichage suivant le choix fait plus haut
         
         if (queFaire==1) {
-
+          
+          // calcul attenuation
           monFiltre.calculTableauAttenuation();
-
-        }
-        else if (queFaire==2) {
-          monFiltre.calculTableauPhase();
-        }
-        
-          // on complètera éventuellement suivant l'implémentation future
-        
-        // Affichage des résultats 
-        
-        if (queFaire==1) {
-
+          // Affichage des résultats
           monFiltre.afficheTableauAttenuation();
 
         }
         else if (queFaire==2) {
+          
+          //calcul phase
+          monFiltre.calculTableauPhase();
+          // Affichage des résultats
           monFiltre.afficheTableauPhase();
         }
+        
+          // on complètera éventuellement suivant l'implémentation future
+        
+
         
       }
       
