@@ -28,7 +28,7 @@ public class NFA032_avecLanceur {
       
       if (choixMenu==1){
         
-        // on appelle le lanceur de filtre
+        // on appelle le lanceur de filtre en créant l'objet Lanceur
         Terminal.ecrireStringln("Créé un nouveau filtre");
         LanceurFiltre nouveauLanceur = new LanceurFiltre();
         
