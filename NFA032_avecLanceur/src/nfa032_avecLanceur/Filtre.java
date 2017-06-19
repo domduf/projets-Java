@@ -18,26 +18,26 @@ public class Filtre  {
     this.fonction=FonctionFiltre.passeTOUT;
     this.ordre=0;
   }
- 
-  /**
-   * 
-   * @param ordre
-   */
+  
   Filtre(int o){
     this.ordre=o;
-    
   }
+ 
+
   
   
   //getters
     public int getOrdre(){
     return this.ordre;
   }
+    
+    public String[] getQueVoulezVousFaire(){
+      String[] ceQueJePropose={"choixDesComposant","calculTableauAttenuation","calculTableauPhase",
+          "afficheTableauAttenuation","afficheTableauPhase"};
+      return ceQueJePropose;
+    }
   
-  //setters
-    public void setOrdre(){
-    this.ordre= this.choixDansMenu();
-  }
+
   
   
   // methodes d'instances
@@ -52,18 +52,7 @@ public class Filtre  {
 
   }
   
-  //choix du Filtre
-  public  int choixDansMenu(){
-    
-    int ordreMenu;
-    String[] tabMenuFiltre= new String[2];
-    tabMenuFiltre[0]="1er ordre";
-    tabMenuFiltre[1]="2eme ordre";
-    Menu menuFiltre = new Menu("choix de votre filtre", tabMenuFiltre);
-    ordreMenu=menuFiltre.afficheSaisitRetourneChoix();
-    return ordreMenu;
-    
-  }
+
   
   // 
   public void choixDesComposants(){
