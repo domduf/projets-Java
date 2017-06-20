@@ -6,9 +6,9 @@ public class Filtre  {
   protected FonctionFiltre fonction;
   protected float attenuation[];
   protected float phase[];
-  protected int freqBasse;
-  protected int freqHaute;
-  protected int pasDeMesure;
+  protected float freqBasse;
+  protected float freqHaute;
+  protected float pasDeMesure;
 
   
   
