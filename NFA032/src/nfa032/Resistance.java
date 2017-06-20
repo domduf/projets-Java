@@ -10,13 +10,13 @@ public class Resistance extends Composant {
   protected double resistance; // valeur de R
  
   
-  public Resistance(int R) {
+  public Resistance(int res) {
  
     super();
     super.type= TypeComposant.resistif;
     
     
-    this.resistance =R;
+    this.resistance = res;
     this.numero=indice;
     super.nom="Resistance";
     indice+=1;
