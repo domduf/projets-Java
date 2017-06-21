@@ -36,7 +36,7 @@ public class Filtre2 extends Filtre {
   }
   
   public void choixDesComposants(){
-    
+    Terminal.ecrireStringln("à implémenter pour les trois composants dans Filtre2");
   }
 
   

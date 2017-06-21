@@ -40,11 +40,11 @@ public class Filtre1 extends Filtre {
   
   public void choixDesComposants(){
     
-    super.choixDesComposants();
+    Terminal.ecrireStringln("à implémenter pour les deux composants 1 dans Filtre1");
 
   }
   
   public void calculTableauAttenuation(){
-    
+    Terminal.ecrireStringln("à implémenter dans Filtre1");
   }
 }
