@@ -39,7 +39,9 @@ public class Filtre1 extends Filtre {
   
   
   public void choixDesComposants(){
-    Terminal.ecrireStringln("Vous allez devoir choisir vos composants.");
+    
+    super.choixDesComposants();
+
   }
   
   public void calculTableauAttenuation(){

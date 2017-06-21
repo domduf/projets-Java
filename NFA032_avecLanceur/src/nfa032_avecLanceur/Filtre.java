@@ -109,21 +109,60 @@ public class Filtre  {
       this.composantUnique=new Resistance();
 
       Terminal.ecrireStringln("Entrez sa valeur:");
-      double valeur = Terminal.lireDouble();
+      
+      try {
+              double valeur = Terminal.lireDouble();
       Terminal.sautDeLigne();
       composantUnique.setValeur(valeur);
+      } 
+      
+      catch (TerminalException e) {
+        this.messageErreurEntree(e);
+      }
+
     } 
 
+    
+    
+    
     if (choixComposant==2) {
 
       this.composantUnique=new Condensateur();
 
       Terminal.ecrireStringln("Entrez sa valeur:");
-      double valeur = Terminal.lireDouble();
-      Terminal.sautDeLigne();
-      composantUnique.setValeur(valeur);
+      
+      try {
+        double valeur = Terminal.lireDouble();
+        Terminal.sautDeLigne();
+        composantUnique.setValeur(valeur);
+      } catch (TerminalException e) {
+        this.messageErreurEntree(e);
+        
+      }
+      
+      
+
+
     }
 
+    if (choixComposant==3) {
+
+      this.composantUnique=new Inductance();
+
+      Terminal.ecrireStringln("Entrez sa valeur:");
+      
+      try {
+              double valeur = Terminal.lireDouble();
+      Terminal.sautDeLigne();
+      composantUnique.setValeur(valeur);
+      } 
+      
+      catch (TerminalException e) {
+        this.messageErreurEntree(e);
+      }
+
+    } 
+    
 
 
 
@@ -157,6 +196,11 @@ public class Filtre  {
 
   public void afficheTableauPhase(){
 
+  }
+  
+  public void messageErreurEntree(TerminalException e){
+    Terminal.ecrireStringln("Ré-essayez SVP, mauvaise valeur entrée -> "+e.toString());
+    choixDesComposants();
   }
 
 }
