@@ -114,12 +114,21 @@ public class Filtre  {
       composantUnique.setValeur(valeur);
     } 
 
+    if (choixComposant==2) {
+
+      this.composantUnique=new Condensateur();
+
+      Terminal.ecrireStringln("Entrez sa valeur:");
+      double valeur = Terminal.lireDouble();
+      Terminal.sautDeLigne();
+      composantUnique.setValeur(valeur);
+    }
 
 
 
 
-
-    Terminal.ecrireStringln(composantUnique.nom+ " "+composantUnique.getValeur());
+    Terminal.ecrireStringln(composantUnique.nom+ " "+composantUnique.getValeur()
+        + " "+composantUnique.type.donneUnite());
 
 
 

@@ -7,6 +7,26 @@ public class Condensateur extends Composant {
   
   //variables d'instance
   protected int numero;
-  protected double capacitance;// valeur en Farad
+  protected double valeur;// valeur en Farad
+  
+  public Condensateur(){
+    super();
+    super.type=TypeComposant.capacitif;
+    super.nom="Condensateur";
+    
+    this.numero=indice;
+    indice+=1;
+  }
+  
+  public Condensateur(double val){
+    super();
+    super.type=TypeComposant.capacitif;
+    super.nom="Condensateur";
+    
+    this.numero=indice;
+    indice+=1;
+    
+    this.valeur =val;
+  }
 
 }

@@ -23,13 +23,12 @@ public class Resistance extends Composant {
  
     super();
     super.type= TypeComposant.resistif;
-    
-    
-    this.valeur = res;
-    this.numero=indice;
     super.nom="Resistance";
+   
+    this.numero=indice;
     indice+=1;
     
+    this.valeur = res;
   }
   
   
