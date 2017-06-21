@@ -218,10 +218,10 @@ public class Filtre  {
 
   }
   
-  /**
-   * Affiche un message d'erreur en cas de mauvaise entrée de valeur de composant
-   * @param e exeption soulevée
-   */
+ /**
+  * 
+  * @param e
+  */
   public void messageErreurEntree(TerminalException e){
     Terminal.ecrireStringln("Ré-essayez SVP, mauvaise valeur entrée -> "+e.toString());
     choixDesComposants();

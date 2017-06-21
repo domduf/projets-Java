@@ -5,7 +5,7 @@ public enum TypeComposant {
   
   resistif("composant passif","Ohms"),
   capacitif("composant capacitif","Farads"),
-  selfique("composant selfique","Henris");
+  selfique("composant selfique","Henrys");
   
   
   private String nom;

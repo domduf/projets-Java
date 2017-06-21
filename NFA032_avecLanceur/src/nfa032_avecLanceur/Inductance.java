@@ -8,5 +8,25 @@ public class Inductance extends Composant{
   //variables d'instance
   protected int numero;
   protected double inductance; // valeur en Henry
-
+  
+  
+  public Inductance (){
+    super();
+    super.type=TypeComposant.selfique;
+    super.nom="Self";
+    
+    this.numero=indice;
+    indice+=1;
+  }  
+  
+  public Inductance (double val){
+    super();
+    super.type=TypeComposant.selfique;
+    super.nom="Self";
+    
+    this.numero=indice;
+    indice+=1;
+    
+    this.valeur =val;
+  }
 }

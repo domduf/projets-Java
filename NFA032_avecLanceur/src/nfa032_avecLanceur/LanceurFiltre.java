@@ -80,17 +80,4 @@ public class LanceurFiltre {
   }
 
 
-
-  /**
-   * propose un menu en fonction de ce que proposer le filtre choisi
-   */
-  private void fonctionsDuFiltre(Filtre f){
-    Terminal.ecrireStringln("dans la boucle de choix des fonctions spécifiques au filtre choisit");
-
-
-
-  }
-
-
-
 }
