@@ -20,7 +20,9 @@ public class Filtre  {
 
 
 
-  // constructeur
+  /**
+   * constructeur par défaut
+   */
   Filtre(){
     this.fonction=FonctionFiltre.passeTOUT;
     this.ordre=0;
@@ -28,6 +30,10 @@ public class Filtre  {
     this.ceQueJePropose=new Menu("Menu Filtre ordre 0 ", this.lesChoixProposes);
   }
 
+  /**
+   * constructeur 
+   * @param o ordre
+   */
   Filtre(int o){
     this.ordre=o;
   }
@@ -35,7 +41,10 @@ public class Filtre  {
 
 
 
-  //getters
+  /**
+   * 
+   * @return ordre du filtre
+   */
   public int getOrdre(){
     return this.ordre;
   }
@@ -176,28 +185,43 @@ public class Filtre  {
   }
 
 
-
+  /**
+   * clacul le Tableau des Attenuations
+   */
   public void calculTableauAttenuation(){
     Terminal.ecrireStringln("Pour les attenuations, soyons tranquilles... aucune.." +
         "et hop !");
   }
 
+  /**
+   * calcul Tableau Phase
+   */
   public void calculTableauPhase(){
     Terminal.ecrireStringln("Pour la phase, ça ne tourne pas... calme plat" +
         "et hop !");
 
   }
 
+  /**
+   * affiche Tableau Attenuation
+   */
   public void afficheTableauAttenuation(){
 
     Terminal.ecrireStringln("0dB ---------------");
 
   }
 
+  /**
+   * affiche Tableau Phase
+   */
   public void afficheTableauPhase(){
 
   }
   
+  /**
+   * Affiche un message d'erreur en cas de mauvaise entrée de valeur de composant
+   * @param e exeption soulevée
+   */
   public void messageErreurEntree(TerminalException e){
     Terminal.ecrireStringln("Ré-essayez SVP, mauvaise valeur entrée -> "+e.toString());
     choixDesComposants();
