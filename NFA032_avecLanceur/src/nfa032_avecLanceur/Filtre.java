@@ -123,6 +123,7 @@ public class Filtre  {
               double valeur = Terminal.lireDouble();
       Terminal.sautDeLigne();
       composantUnique.setValeur(valeur);
+      Terminal.ecrireStringln(donneNomEtValeurComposant(composantUnique));
       } 
       
       catch (TerminalException e) {
@@ -144,6 +145,8 @@ public class Filtre  {
         double valeur = Terminal.lireDouble();
         Terminal.sautDeLigne();
         composantUnique.setValeur(valeur);
+        Terminal.ecrireStringln(donneNomEtValeurComposant(composantUnique));
+        
       } catch (TerminalException e) {
         this.messageErreurEntree(e);
         
@@ -157,13 +160,14 @@ public class Filtre  {
     if (choixComposant==3) {
 
       this.composantUnique=new Inductance();
-
       Terminal.ecrireStringln("Entrez sa valeur:");
       
       try {
-              double valeur = Terminal.lireDouble();
+      double valeur = Terminal.lireDouble();
       Terminal.sautDeLigne();
       composantUnique.setValeur(valeur);
+      Terminal.ecrireStringln(donneNomEtValeurComposant(composantUnique));
+
       } 
       
       catch (TerminalException e) {
@@ -174,15 +178,18 @@ public class Filtre  {
     
 
 
-
-    Terminal.ecrireStringln(composantUnique.nom+ " "+composantUnique.getValeur()
-        + " "+composantUnique.type.donneUnite());
-
-
-
-
-
   }
+  
+  /**
+   * donne le Nom Et la Valeur du Composant
+   * @param c
+   * @return
+   */
+  public String donneNomEtValeurComposant(Composant c){
+   return (composantUnique.nom+ " "+composantUnique.getValeur()
+        + " "+composantUnique.type.donneUnite());
+  }
+  
 
 
   /**
