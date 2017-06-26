@@ -62,7 +62,7 @@ public class Filtre  {
 
 
     if (voeux==1) {// choix Des Composants
-      this.choixDesComposants();
+      this.choixDesComposants(composantUnique);
 
     }
 
@@ -104,7 +104,7 @@ public class Filtre  {
   /**
    * choixDesComposants
    */
-  public void choixDesComposants(){
+  public void choixDesComposants(Composant c){
 
 
     Terminal.ecrireStringln("Quel type de composant voulez-vous ?");
@@ -115,19 +115,19 @@ public class Filtre  {
 
     if (choixComposant==1) {
 
-      this.composantUnique=new Resistance();
+      c=new Resistance();
 
       Terminal.ecrireStringln("Entrez sa valeur:");
       
       try {
               double valeur = Terminal.lireDouble();
       Terminal.sautDeLigne();
-      composantUnique.setValeur(valeur);
-      Terminal.ecrireStringln(donneNomEtValeurComposant(composantUnique));
+      c.setValeur(valeur);
+      Terminal.ecrireStringln(donneNomEtValeurComposant(c));
       } 
       
       catch (TerminalException e) {
-        this.messageErreurEntree(e);
+        this.messageErreurEntree(e,c);
       }
 
     } 
@@ -137,18 +137,18 @@ public class Filtre  {
     
     if (choixComposant==2) {
 
-      this.composantUnique=new Condensateur();
+      c=new Condensateur();
 
       Terminal.ecrireStringln("Entrez sa valeur:");
       
       try {
         double valeur = Terminal.lireDouble();
         Terminal.sautDeLigne();
-        composantUnique.setValeur(valeur);
-        Terminal.ecrireStringln(donneNomEtValeurComposant(composantUnique));
+        c.setValeur(valeur);
+        Terminal.ecrireStringln(donneNomEtValeurComposant(c));
         
       } catch (TerminalException e) {
-        this.messageErreurEntree(e);
+        this.messageErreurEntree(e, c);
         
       }
       
@@ -159,19 +159,19 @@ public class Filtre  {
 
     if (choixComposant==3) {
 
-      this.composantUnique=new Inductance();
+      c=new Inductance();
       Terminal.ecrireStringln("Entrez sa valeur:");
       
       try {
       double valeur = Terminal.lireDouble();
       Terminal.sautDeLigne();
-      composantUnique.setValeur(valeur);
-      Terminal.ecrireStringln(donneNomEtValeurComposant(composantUnique));
+      c.setValeur(valeur);
+      Terminal.ecrireStringln(donneNomEtValeurComposant(c));
 
       } 
       
       catch (TerminalException e) {
-        this.messageErreurEntree(e);
+        this.messageErreurEntree(e, c);
       }
 
     } 
@@ -186,8 +186,8 @@ public class Filtre  {
    * @return
    */
   public String donneNomEtValeurComposant(Composant c){
-   return (composantUnique.nom+ " "+composantUnique.getValeur()
-        + " "+composantUnique.type.donneUnite());
+   return (c.nom+ " "+c.getValeur()
+        + " "+c.type.donneUnite());
   }
   
 
@@ -229,9 +229,9 @@ public class Filtre  {
   * 
   * @param e
   */
-  public void messageErreurEntree(TerminalException e){
+  public void messageErreurEntree(TerminalException e, Composant c){
     Terminal.ecrireStringln("Ré-essayez SVP, mauvaise valeur entrée -> "+e.toString());
-    choixDesComposants();
+    choixDesComposants(c);
   }
 
 }

@@ -28,6 +28,7 @@ public class Filtre2 extends Filtre {
     
     
     if (voeux==1) {// choix Des Composants
+      
       this.choixDesComposants();
       
     }

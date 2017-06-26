@@ -2,12 +2,15 @@ package nfa032_avecLanceur;
 
 public class Filtre1 extends Filtre {
   
+  
+  protected Composant tabComposant[];
   protected Composant composantA;
   protected Composant composantB;
   protected String[] lesChoixProposes = {"choix Des Composants","calcul Tableau Attenuation", "sortir"};
   
   Filtre1() {
     super(1);
+    this.tabComposant=new Composant[2];
     this.ceQueJePropose=new Menu("Menu Filtre ordre 1 ", this.lesChoixProposes);
     Terminal.ecrireStringln("dans le lanceur de filtre 1");
     
@@ -26,7 +29,11 @@ public class Filtre1 extends Filtre {
     
     
     if (voeux==1) {// choix Des Composants
-      this.choixDesComposants();
+      
+      this.choixDesComposants(composantA, "premier");
+      this.choixDesComposants(composantB, "deuxieme");
+      
+      
       
     }
     
@@ -38,10 +45,11 @@ public class Filtre1 extends Filtre {
   }
   
   
-  public void choixDesComposants(){
+  public void choixDesComposants(Composant c, String s){
     
-    Terminal.ecrireStringln("à implémenter pour les deux composants 1 dans Filtre1");
-
+   
+    Terminal.ecrireStringln("Choix du "+s+" Composant");
+    super.choixDesComposants(c);
   }
   
   public void calculTableauAttenuation(){
